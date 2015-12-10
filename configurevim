@@ -1,0 +1,6 @@
+./configure --with-features=normal \
+            --enable-multibyte \
+            --enable-gui=auto \
+            --enable-cscope \
+            --with-x \
+            --prefix=/usr
