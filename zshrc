@@ -161,12 +161,12 @@ function precmd() {
 	local LEFTWIDTH=${#${(%):-%n@%m:%~}}
 	local RIGHTWIDTH=${#${(%):--%w%T}}
 	local PADWIDTH
-	(( PADWIDTH = ${TERMWIDTH} - ${LEFTWIDTH} - ${RIGHTWIDTH} ))
+	(( PADWIDTH = ( ${TERMWIDTH} - ${LEFTWIDTH} - ${RIGHTWIDTH} ) / 2 ))
 	PR_PAD=' '
 	PR_PADDING="\${(l.(( $PADWIDTH )).. .)}"
 }
 
-PROMPT='%(!.$PR_WHITE$PR_BK_RED.$PR_BK_WHITE)%n@%m:%~${(e)PR_PADDING} %w %T%E$PR_NO_COLOUR
+PROMPT='%(!.$PR_WHITE$PR_BK_RED.$PR_BK_WHITE)${(e)PR_PADDING}%n@%m${(e)PR_PADDING} %w %T%E$PR_NO_COLOUR
 %?|%!> '
 
 
