@@ -166,7 +166,7 @@ function precmd() {
 	PR_PADDING="\${(l.(( $PADWIDTH )).. .)}"
 }
 
-PROMPT='%(!.$PR_WHITE$PR_BK_RED.$PR_BK_WHITE)${(e)PR_PADDING}%n@%m${(e)PR_PADDING} %w %T%E$PR_NO_COLOUR
+PROMPT='%(!.$PR_WHITE$PR_BK_RED.$PR_BK_WHITE)%~${(e)PR_PADDING}%n@%m${(e)PR_PADDING} %w %T%E$PR_NO_COLOUR
 %?|%!> '
 
 
