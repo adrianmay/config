@@ -67,6 +67,10 @@ then
     bind2maps       viins vicmd -- Left        vi-backward-char
     bind2maps emacs             -- Right       forward-char
     bind2maps       viins vicmd -- Right       vi-forward-char
+    #bind2maps       viins vicmd -- '^[.'       insert-last-word
+
+bindkey -M viins '^[.' insert-last-word
+bindkey -M vicmd '^[.' insert-last-word
 
     # Make sure the terminal is in application mode, when zle is
     # active. Only then are the values from $terminfo valid.
