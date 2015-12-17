@@ -124,8 +124,9 @@ alias l='ls -CF'
 alias dh='dirs -v'
 alias h='history -50'
 alias install='sudo apt-get install '
-# dir-local history ...
+export PATH=~/bin:~/OPs/dtv_scripts:$PATH
 
+# dir-local history ...
 setopt appendhistory autocd extendedglob notify autopushd pushdminus pushdsilent pushdtohome prompt_subst share_history hist_ignorealldups
 
 export HISTGLOBAL=$HOME/.zsh_history
@@ -173,5 +174,5 @@ function precmd() {
 PROMPT='%(!.$PR_WHITE$PR_BK_RED.$PR_BK_WHITE)%~${(e)PR_PADDING}%n@%m${(e)PR_PADDING} %w %T%E
 %?|%! $PR_NO_COLOUR'
 
-
+cat DOING
 
