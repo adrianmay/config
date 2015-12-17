@@ -41,6 +41,7 @@ bindsym $mod+d exec dmenu_run
 
 # screen lock
 bindsym $mod+Shift+l exec i3lock -c 000010
+bindsym $mod+Shift+s exec sudo /sbin/shutdown -h now
 
 # change focus
 bindsym $mod+Left focus left
