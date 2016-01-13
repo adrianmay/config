@@ -1,97 +1,57 @@
-" Vim colorscheme file
-" Maintainer:   Adrian Nagle <vim@naglenet.org>
-" Last Change:  2001-09-25 07:48:15 Mountain Daylight Time
-" URL:          http://www.naglenet.org/vim/syntax/adrian.vim
-" MAIN URL:     http://www.naglenet.org/vim
+" Vim color file
+" Maintainer:	Alexander Timmermans <alexandertimmermans@orange.nl>
+" Last Change: 28 september 2006
 
-" This is my custom syntax file to override the defaults provided with Vim.
-" This file should be located in $HOME/vimfiles/colors.
-
-" This file should automatically be sourced by $RUNTIMEPATH.
-
-" NOTE(S):
-" *(1)
-" The color definitions assumes and is intended for a black or dark
-" background.
-
-" *(2)
-" This file is specifically in Unix style EOL format so that I can simply
-" copy this file between Windows and Unix systems.  VIM can source files in
-" with the UNIX EOL format (only <NL> instead of <CR><NR> for DOS) in any
-" operating system if the 'fileformats' is not empty and there is no <CR>
-" just before the <NL> on the first line.  See ':help :source_crnl' and
-" ':help fileformats'.
-"
-" *(3)
-" Move this file to adrian.vim for vim6.0aw.
-"
-
-
-
+set bg=dark
 hi clear
-set background=dark
 if exists("syntax_on")
-  syntax reset
+	syntax reset
 endif
-let g:colors_name = "adrian"
 
-" Normal is for the normal (unhighlighted) text and background.
-" NonText is below the last line (~ lines).
-highlight Normal                  guibg=Black      guifg=Green 
-highlight Cursor                  guibg=Grey70     guifg=White
-highlight NonText                 guibg=Grey80
-highlight StatusLine     gui=bold guibg=DarkGrey   guifg=Orange
-highlight StatusLineNC            guibg=DarkGrey   guifg=Orange
+let colors_name = "campfire"
 
-highlight Comment    term=bold      ctermfg=LightGrey                  guifg=#d1ddff
-highlight Constant   term=underline ctermfg=White                      guifg=#ffa0a0
-"highlight Number   term=underline ctermfg=Yellow                     guifg=Yellow
-highlight Identifier term=underline ctermfg=Cyan                       guifg=#40ffff
-highlight Statement  term=bold      ctermfg=Yellow           gui=bold  guifg=#ffff60
-highlight PreProc    term=underline ctermfg=Blue                       guifg=#ff4500
-highlight Type       term=underline ctermfg=DarkGrey         gui=bold  guifg=#7d96ff
-highlight Special    term=bold      ctermfg=Magenta                    guifg=Orange
-highlight Ignore                    ctermfg=black                      guifg=bg
-highlight Error                     ctermfg=White      ctermbg=Red     guifg=White    guibg=Red
-highlight Todo                      ctermfg=Blue       ctermbg=Yellow  guifg=Blue     guibg=Yellow
+hi Normal		guifg=#c0c0c0 guibg=#000040						ctermfg=gray ctermbg=black
+hi ErrorMsg		guifg=#ffffff guibg=#287eff						ctermfg=white ctermbg=lightblue
+hi Visual		guifg=#8080ff guibg=fg		gui=reverse				ctermfg=lightblue ctermbg=fg cterm=reverse
+hi VisualNOS	guifg=#8080ff guibg=fg		gui=reverse,underline	ctermfg=lightblue ctermbg=fg cterm=reverse,underline
+hi Todo			guifg=#d14a14 guibg=#1248d1						ctermfg=red	ctermbg=darkblue
+hi Search		guifg=#90fff0 guibg=#2050d0						ctermfg=white ctermbg=darkblue cterm=underline term=underline
+hi IncSearch	guifg=#b0ffff guibg=#2050d0							ctermfg=darkblue ctermbg=gray
 
-" Change the highlight of search matches (for use with :set hls).
-highlight Search                    ctermfg=Black      ctermbg=Yellow  guifg=Black    guibg=Yellow  
+hi SpecialKey		guifg=cyan			ctermfg=darkcyan
+hi Directory		guifg=cyan			ctermfg=cyan
+hi Title			guifg=magenta gui=none ctermfg=magenta cterm=bold
+hi WarningMsg		guifg=red			ctermfg=red
+hi WildMenu			guifg=yellow guibg=black ctermfg=yellow ctermbg=black cterm=none term=none
+hi ModeMsg			guifg=#22cce2		ctermfg=lightblue
+hi MoreMsg			ctermfg=darkgreen	ctermfg=darkgreen
+hi Question			guifg=green gui=none ctermfg=green cterm=none
+hi NonText			guifg=#0030ff		ctermfg=darkblue
 
-" Change the highlight of visual highlight.
-highlight Visual      cterm=NONE    ctermfg=Black      ctermbg=LightGrey  gui=NONE    guifg=Black guibg=Grey70
+hi StatusLine		guifg=blue guibg=darkgray gui=none		ctermfg=blue ctermbg=gray term=none cterm=none
+hi StatusLineNC		guifg=black guibg=darkgray gui=none		ctermfg=black ctermbg=gray term=none cterm=none
+hi VertSplit		guifg=black guibg=darkgray gui=none		ctermfg=black ctermbg=gray term=none cterm=none
 
-highlight Float                     ctermfg=Blue                       guifg=#88AAEE
-highlight Exception                 ctermfg=Red        ctermbg=White   guifg=Red      guibg=White
-highlight Typedef                   ctermfg=White      ctermbg=Blue    gui=bold       guifg=White guibg=Blue
-highlight SpecialChar               ctermfg=Black      ctermbg=White   guifg=Black    guibg=White
-highlight Delimiter                 ctermfg=White      ctermbg=Black   guifg=White    guibg=Black
-highlight SpecialComment            ctermfg=Black      ctermbg=Green   guifg=Black    guibg=Green
+hi Folded			guifg=#808080 guibg=#000040			ctermfg=darkgrey ctermbg=black cterm=bold term=bold
+hi FoldColumn		guifg=#808080 guibg=#000040			ctermfg=darkgrey ctermbg=black cterm=bold term=bold
+hi LineNr			guifg=#90f020			ctermfg=green cterm=none
 
-" Common groups that link to default highlighting.
-" You can specify other highlighting easily.
-highlight link String          Constant
-highlight link Character       Constant
-highlight link Number          Constant
-highlight link Boolean         Statement
-"highlight link Float           Number
-highlight link Function        Identifier
-highlight link Conditional     Type
-highlight link Repeat          Type
-highlight link Label           Type
-highlight link Operator        Type
-highlight link Keyword         Type
-"highlight link Exception       Type
-highlight link Include         PreProc
-highlight link Define          PreProc
-highlight link Macro           PreProc
-highlight link PreCondit       PreProc
-highlight link StorageClass    Type
-highlight link Structure       Type
-"highlight link Typedef         Type
-"highlight link SpecialChar     Special
-highlight link Tag             Special
-"highlight link Delimiter       Special
-"highlight link SpecialComment  Special
-highlight link Debug           Special
+hi DiffAdd			guibg=darkblue	ctermbg=darkblue term=none cterm=none
+hi DiffChange		guibg=darkmagenta ctermbg=magenta cterm=none
+hi DiffDelete		ctermfg=blue ctermbg=cyan gui=bold guifg=Blue guibg=DarkCyan
+hi DiffText			cterm=bold ctermbg=red gui=bold guibg=Red
 
+hi lCursor			guifg=#ffffff guibg=#000000 ctermfg=bg ctermbg=darkgreen
+
+
+hi Comment			guifg=#80a0ff ctermfg=darkgreen
+hi Constant			ctermfg=magenta guifg=#ffa0a0 cterm=none
+hi Special			ctermfg=brown guifg=Orange cterm=none gui=none
+hi Identifier		ctermfg=cyan guifg=seagreen1 cterm=none
+hi Statement		ctermfg=yellow cterm=none guifg=#ffff60 gui=none
+hi PreProc			ctermfg=magenta guifg=gold gui=none cterm=none
+hi type				ctermfg=green guifg=seagreen1 gui=none cterm=none
+hi Underlined		cterm=underline term=underline
+hi Ignore			guifg=bg ctermfg=bg
+hi String       term=NONE           cterm=NONE           gui=NONE           start=^[[m^[[33m    stop=^[[m^[[32m   ctermfg=3   guifg=LightGrey
+hi Constant     term=NONE           cterm=NONE           gui=NONE           start=^[[m^[[33m    stop=^[[m^[[32m   ctermfg=3   guifg=LightGrey

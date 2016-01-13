@@ -25,7 +25,7 @@ set modeline
 set scrolloff=10000
 
 set background=light
-colorscheme bclear
+colorscheme adrian
 " set background=dark
 " colorscheme ad
 " let g:solarized_termcolors=16
@@ -37,8 +37,8 @@ colorscheme bclear
 
 " Enable CursorLine
 set cursorline
-highlight CursorLine cterm=NONE 
-autocmd InsertEnter * highlight CursorLine ctermbg=white cterm=NONE 
+highlight CursorLine cterm=bold 
+autocmd InsertEnter * highlight CursorLine ctermbg=blue cterm=NONE 
 autocmd InsertLeave * highlight CursorLine ctermbg=NONE cterm=NONE 
 " autocmd InsertEnter * highlight CursorLine ctermbg=white cterm=bold
 " autocmd InsertLeave * highlight CursorLine ctermbg=beige cterm=NONE

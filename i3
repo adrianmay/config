@@ -9,8 +9,10 @@
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
+# exec_always --no-startup-id xrandr --output HDMI1 --above eDP1
+
 focus_follows_mouse no
-setxkbmap -layout gb
+exec setxkbmap -layout gb
 set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
