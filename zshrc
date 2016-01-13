@@ -122,8 +122,9 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 alias dh='dirs -v'
-alias h='history -50'
+alias h='history -250'
 alias install='sudo apt-get install '
+alias grep='grep -n '
 export PATH=~/bin:~/OPs/dtv_scripts:$PATH
 
 # dir-local history ...
