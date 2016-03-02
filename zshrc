@@ -124,9 +124,7 @@ alias l='ls -CF'
 alias dh='dirs -v'
 alias h='history -250'
 alias install='sudo apt-get install '
-alias grep='grep -n '
-export PATH=~/bin:~/OPs/dtv_scripts:$PATH
-
+alias hexdump='od -A x -t x1z '
 # dir-local history ...
 setopt appendhistory autocd extendedglob notify autopushd pushdminus pushdsilent pushdtohome prompt_subst share_history hist_ignorealldups
 
