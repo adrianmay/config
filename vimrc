@@ -12,7 +12,7 @@ call pathogen#infect()
 	
 set tabstop=2
 set shiftwidth=2
-set expandtab
+set noexpandtab
 set nowrap
 set ruler
 set nu
