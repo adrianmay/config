@@ -128,5 +128,7 @@ map! <M-Esc>[64~ <nop>
 map <M-Esc>[65~ <nop>
 map! <M-Esc>[65~ <nop>
 
+nmap _ :set number!
+
 
 
