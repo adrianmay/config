@@ -133,6 +133,7 @@ touch $HISTGLOBAL
 export HISTSIZE=2000
 export SAVEHIST=2000
 export HISTROOT=$HOME/.hist
+export EDITPR=vi
 
 chpwd () {
     fc -A $HISTGLOBAL $HISTSIZE $SAVEHIST
