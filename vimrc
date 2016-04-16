@@ -21,6 +21,7 @@ set ai
 "set statusline+=%F
 set laststatus=2
 set modeline
+set splitbelow
 
 set scrolloff=10000
 
@@ -85,7 +86,7 @@ imap {} {<CR>}<Esc>ko
 nmap <INS> :set nopaste!<CR>
 
 map <S-Tab> :wa<CR>:bnext<CR>
-map <F5> :wa<CR>:!make<CR>
+map <F5> :wa<CR>:Shell make<CR>
 map <F6> :wa<CR>:execute "!cabal build --ghc-options=\"-Wall\" && ./run" <CR>
 map <F9> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
 \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
@@ -127,6 +128,28 @@ map <M-Esc>[64~ <nop>
 map! <M-Esc>[64~ <nop>
 map <M-Esc>[65~ <nop>
 map! <M-Esc>[65~ <nop>
+
+nmap _ :set number!
+
+command! -complete=shellcmd -nargs=+ Shell call s:RunShellCommand(<q-args>)
+function! s:RunShellCommand(cmdline)
+  echo a:cmdline
+  let expanded_cmdline = a:cmdline
+  for part in split(a:cmdline, ' ')
+     if part[0] =~ '\v[%#<]'
+        let expanded_part = fnameescape(expand(part))
+        let expanded_cmdline = substitute(expanded_cmdline, part, expanded_part, '')
+     endif
+  endfor
+  botright new
+  setlocal buftype=nofile bufhidden=wipe nobuflisted noswapfile nowrap
+  call setline(1, 'You entered:    ' . a:cmdline)
+  call setline(2, 'Expanded Form:  ' .expanded_cmdline)
+  call setline(3,substitute(getline(2),'.','=','g'))
+  execute '$read !'. expanded_cmdline
+  setlocal nomodifiable
+  1
+endfunction
 
 
 
