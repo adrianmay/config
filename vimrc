@@ -82,11 +82,12 @@ imap [] []<Esc>i
 imap () ()<Esc>i
 imap "" ""<Esc>i
 imap '' ''<Esc>i
-imap {} {<CR>}<Esc>ko
+imap {] {<CR>}<Esc>ko
 nmap <INS> :set nopaste!<CR>
 
 map <S-Tab> :wa<CR>:bnext<CR>
-map <F5> :wa<CR>:Shell make<CR>
+map <S-F5> :wa<CR>:Shell make<CR>
+map <F5> :wa<CR>:make<CR>
 map <F6> :wa<CR>:execute "!cabal build --ghc-options=\"-Wall\" && ./run" <CR>
 map <F9> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
 \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
@@ -151,5 +152,6 @@ function! s:RunShellCommand(cmdline)
   1
 endfunction
 
+let g:ConqueGdb_GdbExe = '/home/adrian.may/bin/mips-linux-gdb'
 
 
