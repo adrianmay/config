@@ -6,7 +6,7 @@ syntax on
 filetype plugin on
 "set ofu=syntaxcomplete#Complete
 filetype plugin indent on
-au BufEnter *.hs compiler ghc
+"au BufEnter *.hs compiler ghc
 
 call pathogen#infect()
 	
