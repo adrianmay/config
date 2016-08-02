@@ -154,5 +154,5 @@ endfunction
 
 let g:ConqueGdb_GdbExe = '/home/adrian.may/bin/mips-linux-gdb'
 
-:set list lcs=tab:\|\ 
+:set list lcs=tab:˲\ 
 
