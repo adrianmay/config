@@ -8,7 +8,7 @@ filetype plugin on
 filetype plugin indent on
 "au BufEnter *.hs compiler ghc
 
-call pathogen#infect()
+execute pathogen#infect()
 	
 set tabstop=2
 set shiftwidth=2
@@ -154,4 +154,5 @@ endfunction
 
 let g:ConqueGdb_GdbExe = '/home/adrian.may/bin/mips-linux-gdb'
 
+:set list lcs=tab:\|\ 
 

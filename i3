@@ -14,6 +14,7 @@
 focus_follows_mouse no
 exec setxkbmap -layout gb
 exec syndaemon -dRki1
+exec nm-applet
 set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
