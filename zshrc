@@ -181,4 +181,5 @@ PROMPT='%(!.$PR_WHITE$PR_BK_RED.$PR_TEMP$PR_BK_WHITE)%~${(e)PR_PADDING}%n@%m${(e
 ulimit -c unlimited
 
 cat DOING
+cd
 

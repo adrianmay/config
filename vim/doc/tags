@@ -55,6 +55,7 @@ ConqueTerm_Syntax	conque_term.txt	/*ConqueTerm_Syntax*
 ConqueTerm_TERM	conque_term.txt	/*ConqueTerm_TERM*
 ConqueTerm_ToggleKey	conque_term.txt	/*ConqueTerm_ToggleKey*
 ConqueTerm_UnfocusedUpdateTime	conque_term.txt	/*ConqueTerm_UnfocusedUpdateTime*
+ZoomWin.txt	ZoomWin.txt	/*ZoomWin.txt*
 _.	haskellmode.txt	/*_.*
 _?	haskellmode.txt	/*_?*
 _?1	haskellmode.txt	/*_?1*
@@ -148,6 +149,7 @@ g:ConqueGdb_SetBreak	conque_gdb.txt	/*g:ConqueGdb_SetBreak*
 g:ConqueGdb_SrcSplit	conque_gdb.txt	/*g:ConqueGdb_SrcSplit*
 g:ConqueGdb_Step	conque_gdb.txt	/*g:ConqueGdb_Step*
 g:ConqueGdb_ToggleBreak	conque_gdb.txt	/*g:ConqueGdb_ToggleBreak*
+g:ZoomWin_funcref	ZoomWin.txt	/*g:ZoomWin_funcref*
 g:ghc	haskellmode.txt	/*g:ghc*
 g:haddock_browser	haskellmode.txt	/*g:haddock_browser*
 g:haddock_browser_callformat	haskellmode.txt	/*g:haddock_browser_callformat*
@@ -174,6 +176,9 @@ g:tagbar_systemenc	tagbar.txt	/*g:tagbar_systemenc*
 g:tagbar_updateonsave_maxlines	tagbar.txt	/*g:tagbar_updateonsave_maxlines*
 g:tagbar_width	tagbar.txt	/*g:tagbar_width*
 g:wget	haskellmode.txt	/*g:wget*
+g:zoomwin_localoptlist	ZoomWin.txt	/*g:zoomwin_localoptlist*
+g:zoomwin_preserve_taglist	ZoomWin.txt	/*g:zoomwin_preserve_taglist*
+g:zoomwin_preserve_winmanager	ZoomWin.txt	/*g:zoomwin_preserve_winmanager*
 ghc	haskellmode.txt	/*ghc*
 ghc-compiler	haskellmode.txt	/*ghc-compiler*
 haddock	haskellmode.txt	/*haddock*
@@ -219,3 +224,9 @@ tagbar-statusline	tagbar.txt	/*tagbar-statusline*
 tagbar-todo	tagbar.txt	/*tagbar-todo*
 tagbar-usage	tagbar.txt	/*tagbar-usage*
 tagbar.txt	tagbar.txt	/*tagbar.txt*
+zoomwin	ZoomWin.txt	/*zoomwin*
+zoomwin-copyright	ZoomWin.txt	/*zoomwin-copyright*
+zoomwin-history	ZoomWin.txt	/*zoomwin-history*
+zoomwin-options	ZoomWin.txt	/*zoomwin-options*
+zoomwin-setup	ZoomWin.txt	/*zoomwin-setup*
+zoomwin-usage	ZoomWin.txt	/*zoomwin-usage*
