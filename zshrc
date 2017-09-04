@@ -176,7 +176,7 @@ function precmd() {
 }
 
 PROMPT='%(!.$PR_WHITE$PR_BK_RED.$PR_TEMP$PR_BK_WHITE)%~${(e)PR_PADDING}%n@%m${(e)PR_PADDING} %w %T%E
-%?|%! $PR_NO_COLOUR'
+%?|%! $PR_NO_COLOUR$(aplay -q /usr/share/sounds/popq.wav &)'
 
 ulimit -c unlimited
 
