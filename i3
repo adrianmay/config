@@ -12,7 +12,7 @@
 # exec_always --no-startup-id xrandr --output HDMI1 --above eDP1
 
 focus_follows_mouse no
-exec setxkbmap -layout gb
+exec "setxkbmap -layout gb"
 exec syndaemon -dRki1
 exec nm-applet
 set $mod Mod4
@@ -34,6 +34,7 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+s exec i3-sensible-terminal
 bindsym $mod+b exec firefox
 bindsym $mod+Shift+b exec google-chrome
+bindsym $mod+w exec i3-sensible-terminal -e work
 
 # kill focused window
 bindsym $mod+Shift+q kill
