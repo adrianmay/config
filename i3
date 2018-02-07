@@ -34,7 +34,6 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+s exec i3-sensible-terminal
 bindsym $mod+b exec firefox
 bindsym $mod+Shift+b exec google-chrome
-bindsym $mod+w exec i3-sensible-terminal -e work
 
 # kill focused window
 bindsym $mod+Shift+q kill
