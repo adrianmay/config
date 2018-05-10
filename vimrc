@@ -39,7 +39,7 @@ colorscheme adrian
 " Enable CursorLine
 set cursorline
 highlight CursorLine cterm=bold 
-autocmd InsertEnter * highlight CursorLine ctermbg=blue cterm=NONE 
+autocmd InsertEnter * highlight CursorLine ctermbg=red cterm=NONE 
 autocmd InsertLeave * highlight CursorLine ctermbg=NONE cterm=NONE 
 " autocmd InsertEnter * highlight CursorLine ctermbg=white cterm=bold
 " autocmd InsertLeave * highlight CursorLine ctermbg=beige cterm=NONE

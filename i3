@@ -12,9 +12,9 @@
 # exec_always --no-startup-id xrandr --output HDMI1 --above eDP1
 
 focus_follows_mouse no
-exec "setxkbmap -layout gb"
-exec syndaemon -dRki1
-exec nm-applet
+exec --no-startup-id "setxkbmap -layout gb"
+exec --no-startup-id "syndaemon -dRki1"
+exec --no-startup-id feh --bg-scale /home/adrian.may/Bark.jpg
 set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
@@ -33,7 +33,7 @@ floating_modifier $mod
 bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+s exec i3-sensible-terminal
 bindsym $mod+b exec firefox
-bindsym $mod+Shift+b exec google-chrome
+bindsym $mod+Shift+b exec chromium
 
 # kill focused window
 bindsym $mod+Shift+q kill
