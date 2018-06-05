@@ -34,7 +34,7 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+s exec i3-sensible-terminal
 bindsym $mod+b exec firefox
 bindsym $mod+Shift+b exec chromium
-
+bindsym $mod+t exec --no-startup-id "killall -q syndaemon && synclient TouchpadOff=1 || ( synclient TouchpadOff=0 && syndaemon -dRki1 )"
 # kill focused window
 bindsym $mod+Shift+q kill
 
@@ -55,6 +55,7 @@ bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
+bindsym $mod+Ctrl+e exec --no-startup-id "sleep 0.5; xvkbd -text adrian.alexander.may@gmail.com"
 # move focused window
 bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
