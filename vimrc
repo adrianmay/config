@@ -39,11 +39,12 @@ colorscheme adrian
 " Enable CursorLine
 set cursorline
 highlight CursorLine cterm=bold 
-autocmd InsertEnter * highlight CursorLine ctermbg=blue cterm=NONE 
+autocmd InsertEnter * highlight CursorLine ctermbg=darkgrey cterm=NONE 
 autocmd InsertLeave * highlight CursorLine ctermbg=NONE cterm=NONE 
 " autocmd InsertEnter * highlight CursorLine ctermbg=white cterm=bold
 " autocmd InsertLeave * highlight CursorLine ctermbg=beige cterm=NONE
-highlight MatchParen cterm=bold ctermbg=Blue
+highlight MatchParen cterm=bold 
+" ctermbg=Blue
 
 let CursorColumnI = 0 "the cursor column position in INSERT
 autocmd InsertEnter * let CursorColumnI = col('.')
