@@ -12,10 +12,10 @@
 # exec_always --no-startup-id xrandr --output HDMI1 --above eDP1
 
 focus_follows_mouse no
-# exec "setxkbmap -layout gb"
+exec --no-startup-id setxkbmap -layout gb
 # exec syndaemon -dRki1
 # exec nm-applet
-exec --no-startup-id feh --bg-scale cowandcalf.jpg 
+exec --no-startup-id feh --bg-scale Wallpaper.jpg
 set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
