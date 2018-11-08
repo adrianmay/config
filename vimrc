@@ -35,11 +35,12 @@ colorscheme adrian
 " colorscheme winter
 
 " highlight Normal cterm=bold ctermbg=black
+hi StatusLine ctermbg=white ctermfg=black
 
 " Enable CursorLine
 set cursorline
 highlight CursorLine cterm=bold 
-autocmd InsertEnter * highlight CursorLine ctermbg=blue cterm=NONE 
+autocmd InsertEnter * highlight CursorLine ctermbg=DarkBlue cterm=NONE 
 autocmd InsertLeave * highlight CursorLine ctermbg=NONE cterm=NONE 
 " autocmd InsertEnter * highlight CursorLine ctermbg=white cterm=bold
 " autocmd InsertLeave * highlight CursorLine ctermbg=beige cterm=NONE
@@ -155,4 +156,5 @@ endfunction
 let g:ConqueGdb_GdbExe = '/home/adrian.may/bin/mips-linux-gdb'
 
 :set list lcs=tab:˲\ 
+
 
