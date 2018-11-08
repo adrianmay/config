@@ -35,16 +35,18 @@ colorscheme adrian
 " colorscheme winter
 
 " highlight Normal cterm=bold ctermbg=black
-hi StatusLine ctermbg=white ctermfg=black
+hi StatusLine   ctermfg=15  guifg=#ffffff ctermbg=239 guibg=#4e4e4e cterm=bold gui=bold
+hi StatusLineNC ctermfg=249 guifg=#b2b2b2 ctermbg=237 guibg=#3a3a3a cterm=none gui=none
 
 " Enable CursorLine
 set cursorline
 highlight CursorLine cterm=bold 
-autocmd InsertEnter * highlight CursorLine ctermbg=DarkBlue cterm=NONE 
+autocmd InsertEnter * highlight CursorLine ctermbg=darkgrey cterm=NONE 
 autocmd InsertLeave * highlight CursorLine ctermbg=NONE cterm=NONE 
 " autocmd InsertEnter * highlight CursorLine ctermbg=white cterm=bold
 " autocmd InsertLeave * highlight CursorLine ctermbg=beige cterm=NONE
-highlight MatchParen cterm=bold ctermbg=Blue
+highlight MatchParen cterm=bold 
+" ctermbg=Blue
 
 let CursorColumnI = 0 "the cursor column position in INSERT
 autocmd InsertEnter * let CursorColumnI = col('.')

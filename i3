@@ -12,9 +12,10 @@
 # exec_always --no-startup-id xrandr --output HDMI1 --above eDP1
 
 focus_follows_mouse no
-exec setxkbmap -layout gb
-exec syndaemon -dRki1
-exec nm-applet
+exec --no-startup-id setxkbmap -layout gb
+# exec syndaemon -dRki1
+# exec nm-applet
+exec --no-startup-id feh --bg-scale Wallpaper.jpg
 set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
@@ -33,8 +34,8 @@ floating_modifier $mod
 bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+s exec i3-sensible-terminal
 bindsym $mod+b exec firefox
-bindsym $mod+Shift+b exec google-chrome
-
+bindsym $mod+Shift+b exec chromium
+bindsym $mod+t exec --no-startup-id "killall -q syndaemon && synclient TouchpadOff=1 || ( synclient TouchpadOff=0 && syndaemon -dRki1 )"
 # kill focused window
 bindsym $mod+Shift+q kill
 
@@ -55,6 +56,7 @@ bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
+bindsym $mod+Ctrl+e exec --no-startup-id "sleep 0.5; xvkbd -text adrian.alexander.may@gmail.com"
 # move focused window
 bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down

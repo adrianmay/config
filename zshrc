@@ -126,6 +126,7 @@ alias h='history -250'
 alias install='sudo apt-get install '
 alias hexdump='od -A x -t x1z '
 alias bingo="fc -ln -1 >> .bingos"
+alias psc='ps xawf -eo pid,user,cgroup,args'
 
 # dir-local history ...
 setopt appendhistory autocd extendedglob notify autopushd pushdminus pushdsilent pushdtohome prompt_subst share_history hist_ignorealldups
@@ -175,8 +176,10 @@ function precmd() {
   [[ $HOST = coal ]] && PR_TEMP=$PR_BLUE
 }
 
-PROMPT='%(!.$PR_WHITE$PR_BK_RED.$PR_TEMP$PR_BK_WHITE)%~${(e)PR_PADDING}%n@%m${(e)PR_PADDING} %w %T%E
+PROMPT='%(!.$PR_WHITE$PR_BK_RED.$PR_TEMP$PR_BK_GREEN)%~${(e)PR_PADDING}%n@%m${(e)PR_PADDING} %w %T%E
 %?|%! $PR_NO_COLOUR$([ -f /usr/share/sounds/popq.wav ] && aplay -q /usr/share/sounds/popq.wav &)'
+
+PATH=/home/ad/bin:$PATH
 
 ulimit -c unlimited
 
