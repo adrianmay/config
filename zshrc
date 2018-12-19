@@ -127,6 +127,7 @@ alias install='sudo apt-get install '
 alias hexdump='od -A x -t x1z '
 alias bingo="fc -ln -1 >> .bingos"
 alias psc='ps xawf -eo pid,user,cgroup,args'
+alias xargs="xargs -d '\n'"
 
 # dir-local history ...
 setopt appendhistory autocd extendedglob notify autopushd pushdminus pushdsilent pushdtohome prompt_subst share_history hist_ignorealldups
@@ -180,6 +181,7 @@ PROMPT='%(!.$PR_WHITE$PR_BK_RED.$PR_TEMP$PR_BK_GREEN)%~${(e)PR_PADDING}%n@%m${(e
 %?|%! $PR_NO_COLOUR$([ -f /usr/share/sounds/popq.wav ] && aplay -q /usr/share/sounds/popq.wav &)'
 
 PATH=/home/ad/bin:$PATH
+export P4CONFIG=~/p4.conf
 
 ulimit -c unlimited
 
