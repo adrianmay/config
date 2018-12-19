@@ -127,6 +127,7 @@ alias install='sudo apt-get install '
 alias hexdump='od -A x -t x1z '
 alias bingo="fc -ln -1 >> .bingos"
 alias psc='ps xawf -eo pid,user,cgroup,args'
+alias xargs="xargs -d '\n'"
 
 # dir-local history ...
 setopt appendhistory autocd extendedglob notify autopushd pushdminus pushdsilent pushdtohome prompt_subst share_history hist_ignorealldups
