@@ -185,6 +185,11 @@ export P4CONFIG=~/p4.conf
 
 ulimit -c unlimited
 
+stty stop ''
+stty start ''
+stty -ixon
+stty -ixoff
+
 cat DOING
 cd
 
