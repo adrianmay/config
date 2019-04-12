@@ -16,7 +16,7 @@ focus_follows_mouse no
 exec --no-startup-id setxkbmap -layout gb
 # exec syndaemon -dRki1
 # exec nm-applet
-exec --no-startup-id feh --bg-fill Wallpaper.jpg
+exec --no-startup-id sleep 2; feh --bg-fill Wallpaper.jpg
 set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
