@@ -32,11 +32,12 @@ font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+s exec i3-sensible-terminal
-bindsym $mod+w exec i3-sensible-terminal -x ssh work
+bindsym $mod+space exec i3-sensible-terminal
+bindsym $mod+Ctrl+space exec i3-sensible-terminal -x ssh work
 bindsym $mod+b exec firefox
 bindsym $mod+Shift+b exec chromium
+bindsym $mod+Shift+v exec virtualbox
+bindsym $mod+Shift+s exec slack
 bindsym $mod+t exec --no-startup-id "killall -q syndaemon && synclient TouchpadOff=1 || ( synclient TouchpadOff=0 && syndaemon -dRki1 )"
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -51,7 +52,7 @@ bindsym $mod+d exec dmenu_run
 # screen lock
 bindsym $mod+Shift+l exec i3lock -c 000010
 bindsym $mod+Ctrl+Shift+s exec sudo /sbin/shutdown -h now
-bindsym $mod+Shift+s exec sudo /usr/sbin/pm-suspend  
+# bindsym $mod+Shift+s exec sudo /usr/sbin/pm-suspend  
 # change focus
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
@@ -85,10 +86,9 @@ bindsym $mod+f fullscreen
 # bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
-
+# bindsym $mod+Shift+space floating toggle
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+# bindsym $mod+space focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
@@ -146,11 +146,11 @@ bindsym Print exec scrot -e 'mv $f /tmp/ && gimp /tmp/$f'
 bindsym Mod1+Print exec scrot -s -e 'mv $f /tmp/ && gimp /tmp/$f'
 
 # reload the configuration file
-bindsym $mod+Shift+c reload
+bindsym $mod+Shift+r reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
+bindsym $mod+Ctrl+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+BackSpace exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
