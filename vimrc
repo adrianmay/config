@@ -23,6 +23,9 @@ set laststatus=2
 set modeline
 set splitbelow
 
+" set undofile
+" set undodir=~/.vim/undo/
+
 set scrolloff=10000
 
 set background=light
@@ -65,6 +68,7 @@ endfunction
 com! DiffDisk call s:DiffWithDisk()
 
 au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
+
 
 autocmd FileType javascript let b:surround_45 = "/* \r */"
 autocmd FileType c let b:surround_45 = "/* \r */"
@@ -161,4 +165,5 @@ let g:ConqueGdb_GdbExe = '/home/adrian.may/bin/mips-linux-gdb'
 autocmd FileChangedRO * :!p4 edit %
 autocmd FileType haskell setlocal ts=2 sw=2 expandtab
 
+imap jj <Esc>
 
