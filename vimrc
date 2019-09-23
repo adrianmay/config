@@ -10,6 +10,7 @@ filetype plugin indent on
 
 execute pathogen#infect()
 	
+set hidden
 set tabstop=2
 set shiftwidth=2
 set noexpandtab
@@ -166,4 +167,7 @@ autocmd FileChangedRO * :!p4 edit %
 autocmd FileType haskell setlocal ts=2 sw=2 expandtab
 
 imap jj <Esc>
+nnoremap ff :wqa<CR>
+nnoremap <CR> :wa<CR>
+nnoremap vv :buffers<CR>:buffer<Space>
 
