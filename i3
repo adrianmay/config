@@ -55,7 +55,7 @@ bindsym $mod+d exec dmenu_run
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # screen lock
-bindsym $mod+Shift+Esc exec i3lock -c 000010
+bindsym $mod+BackSpace exec i3lock -c 000010
 bindsym $mod+Ctrl+Shift+s exec sudo /sbin/shutdown -h now
 # bindsym $mod+Shift+s exec sudo /usr/sbin/pm-suspend  
 # change focus
@@ -78,9 +78,9 @@ bindsym $mod+Ctrl+$Left move workspace to output left
 bindsym $mod+Ctrl+$Right move workspace to output right
 
 # split in horizontal orientation
-bindsym $mod+h split h
+bindsym $mod+Shift+bar split h
 # split in vertical orientation
-bindsym $mod+v split v
+bindsym $mod+Shift+minus split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen
@@ -155,7 +155,7 @@ bindsym $mod+Shift+r reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Ctrl+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+BackSpace exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+BackSpace exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
