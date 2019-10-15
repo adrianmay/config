@@ -10,9 +10,10 @@ filetype plugin indent on
 
 execute pathogen#infect()
 	
+set hidden
 set tabstop=2
 set shiftwidth=2
-set noexpandtab
+set expandtab
 set nowrap
 set ruler
 set nu
@@ -22,6 +23,9 @@ set ai
 set laststatus=2
 set modeline
 set splitbelow
+
+" set undofile
+" set undodir=~/.vim/undo/
 
 set scrolloff=10000
 
@@ -65,6 +69,7 @@ endfunction
 com! DiffDisk call s:DiffWithDisk()
 
 au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
+
 
 autocmd FileType javascript let b:surround_45 = "/* \r */"
 autocmd FileType c let b:surround_45 = "/* \r */"
@@ -161,4 +166,8 @@ let g:ConqueGdb_GdbExe = '/home/adrian.may/bin/mips-linux-gdb'
 autocmd FileChangedRO * :!p4 edit %
 autocmd FileType haskell setlocal ts=2 sw=2 expandtab
 
+imap jj <Esc>
+nnoremap ff :wqa<CR>
+nnoremap <CR> :wa<CR>
+nnoremap vv :buffers<CR>:buffer<Space>
 

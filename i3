@@ -19,6 +19,11 @@ exec --no-startup-id setxkbmap -layout gb
 exec --no-startup-id sleep 2; feh --bg-fill Wallpaper.jpg
 set $mod Mod4
 
+set $Left h
+set $Right l
+set $Down j
+set $Up k
+
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below. ISO 10646 = Unicode
 font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -50,32 +55,32 @@ bindsym $mod+d exec dmenu_run
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # screen lock
-bindsym $mod+Shift+l exec i3lock -c 000010
+bindsym $mod+BackSpace exec i3lock -c 000010
 bindsym $mod+Ctrl+Shift+s exec sudo /sbin/shutdown -h now
 # bindsym $mod+Shift+s exec sudo /usr/sbin/pm-suspend  
 # change focus
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
+bindsym $mod+$Left focus left
+bindsym $mod+$Down focus down
+bindsym $mod+$Up focus up
+bindsym $mod+$Right focus right
 
 bindsym $mod+Ctrl+e exec --no-startup-id "sleep 0.5; xvkbd -text adrian.alexander.may@gmail.com"
 # move focused window
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
+bindsym $mod+Shift+$Left move left
+bindsym $mod+Shift+$Down move down
+bindsym $mod+Shift+$Up move up
+bindsym $mod+Shift+$Right move right
 
 # move between monitors
-bindsym $mod+Ctrl+Up move workspace to output up
-bindsym $mod+Ctrl+Down move workspace to output down
-bindsym $mod+Ctrl+Left move workspace to output left
-bindsym $mod+Ctrl+Right move workspace to output right
+bindsym $mod+Ctrl+$Up move workspace to output up
+bindsym $mod+Ctrl+$Down move workspace to output down
+bindsym $mod+Ctrl+$Left move workspace to output left
+bindsym $mod+Ctrl+$Right move workspace to output right
 
 # split in horizontal orientation
-bindsym $mod+h split h
+bindsym $mod+Shift+bar split h
 # split in vertical orientation
-bindsym $mod+v split v
+bindsym $mod+Shift+minus split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen
@@ -150,17 +155,17 @@ bindsym $mod+Shift+r reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Ctrl+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+BackSpace exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+BackSpace exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
 
         # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
+        bindsym $Left resize shrink width 10 px or 10 ppt
+        bindsym $Down resize grow height 10 px or 10 ppt
+        bindsym $Up resize shrink height 10 px or 10 ppt
+        bindsym $Right resize grow width 10 px or 10 ppt
 
         # back to normal: Enter or Escape
         bindsym Return mode "default"
