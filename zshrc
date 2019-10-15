@@ -182,6 +182,7 @@ PROMPT='%(!.$PR_WHITE$PR_BK_RED.$PR_TEMP$PR_BK_GREEN)%~${(e)PR_PADDING}%n@%m${(e
 
 PATH=~/bin:$PATH
 export P4CONFIG=~/p4.conf
+export PRINTER=`cat ~/.printer`
 
 ulimit -c unlimited
 
