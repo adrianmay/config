@@ -133,6 +133,7 @@ alias sctl="sudo systemctl"
 alias nctl="sudo netctl"
 alias jctl=journalctl
 alias jclear="sudo journalctl --flush; sudo journalctl --rotate; sudo journalctl -m --vacuum-time=1s"
+alias gitlog="git log --reflog --oneline --decorate --graph"
 
 # dir-local history ...
 setopt appendhistory autocd extendedglob notify autopushd pushdminus pushdsilent pushdtohome prompt_subst share_history hist_ignorealldups
