@@ -98,7 +98,8 @@ map <S-F5> :wa<CR>:Shell make<CR>
 
 set makeprg=make\ -f\ my.mk
 
-map <F5> :wa<CR>:make \| copen<CR>
+let g:asyncrun_open = 8
+map <F5> :wa<CR>:AsyncRun make -f my.mk<CR>
 nmap <F6> :cn<CR>
 nmap <F7> :cp<CR>
 nmap <F8> :cclose<CR>
