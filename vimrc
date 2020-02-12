@@ -95,8 +95,14 @@ nmap <INS> :set nopaste!<CR>
 
 map <S-Tab> :wa<CR>:bnext<CR>
 map <S-F5> :wa<CR>:Shell make<CR>
-map <F5> :wa<CR>:make<CR>
-map <F6> :wa<CR>:execute "!cabal build --ghc-options=\"-Wall\" && ./run" <CR>
+
+set makeprg=make\ -f\ my.mk
+
+map <F5> :wa<CR>:make \| copen<CR>
+nmap <F6> :cn<CR>
+nmap <F7> :cp<CR>
+nmap <F8> :cclose<CR>
+
 map <F9> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
 \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
 \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
@@ -171,3 +177,7 @@ nnoremap ff :wqa<CR>
 nnoremap <CR> :wa<CR>
 nnoremap vv :buffers<CR>:buffer<Space>
 
+nnoremap <silent> <C-l> <c-w>l
+nnoremap <silent> <C-h> <c-w>h
+nnoremap <silent> <C-k> <c-w>k
+nnoremap <silent> <C-j> <c-w>j
