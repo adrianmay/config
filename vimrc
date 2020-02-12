@@ -99,7 +99,7 @@ map <S-F5> :wa<CR>:Shell make<CR>
 set makeprg=make\ -f\ my.mk
 
 let g:asyncrun_open = 8
-map <F5> :wa<CR>:AsyncRun make -f my.mk<CR>
+nmap <CR> :wa<CR>:AsyncRun make -f my.mk<CR>
 nmap <F6> :cn<CR>
 nmap <F7> :cp<CR>
 nmap <F8> :cclose<CR>
@@ -175,7 +175,6 @@ autocmd FileType haskell setlocal ts=2 sw=2 expandtab
 
 imap jj <Esc>
 nnoremap ff :wqa<CR>
-nnoremap <CR> :wa<CR>
 nnoremap vv :buffers<CR>:buffer<Space>
 
 nnoremap <silent> <C-l> <c-w>l
