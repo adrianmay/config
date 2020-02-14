@@ -99,10 +99,12 @@ map <S-F5> :wa<CR>:Shell make<CR>
 set makeprg=make\ -f\ my.mk
 
 let g:asyncrun_open = 8
-nmap <CR> :wa<CR>:AsyncRun make -f my.mk<CR>
-nmap <F6> :cn<CR>
-nmap <F7> :cp<CR>
-nmap <F8> :cclose<CR>
+vmap g/ y:wa<CR>:AsyncRun fh \| xargs grep -n <C-R>"<CR>
+nmap <CR> :wa<CR>
+nmap <F5> :wa<CR>:AsyncRun make -f my.mk<CR>
+nmap > :cn<CR>
+nmap < :cp<CR>
+nmap <S-F5> :cclose<CR>
 
 map <F9> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
 \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
