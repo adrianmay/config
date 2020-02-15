@@ -97,14 +97,16 @@ map <S-Tab> :wa<CR>:bnext<CR>
 map <S-F5> :wa<CR>:Shell make<CR>
 
 set makeprg=make\ -f\ my.mk
-
 let g:asyncrun_open = 8
-vmap g/ y:wa<CR>:AsyncRun fh \| xargs grep -n <C-R>"<CR>
 nmap <CR> :wa<CR>
+vmap <F3> y:wa<CR>:AsyncRun fh \| xargs -d '\n' grep -wn "<C-R>""<CR>
+vmap g<F3> y:wa<CR>:AsyncRun fh \| xargs -d '\n' grep -n "<C-R>""<CR>
+vmap <F4> y:wa<CR>:AsyncRun f \| xargs -d '\n' grep -n "<C-R>""<CR>
 nmap <F5> :wa<CR>:AsyncRun make -f my.mk<CR>
 nmap > :cn<CR>
 nmap < :cp<CR>
-nmap <S-F5> :cclose<CR>
+nmap <F6> :AsyncStop<CR>
+nmap <F7> :cclose<CR>
 
 map <F9> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
 \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
