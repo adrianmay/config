@@ -38,7 +38,7 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+space exec i3-sensible-terminal
-bindsym $mod+Ctrl+space exec i3-sensible-terminal -x ssh work
+bindsym $mod+Ctrl+space exec i3-sensible-terminal -x ssh adrianmay@work
 bindsym $mod+b exec firefox
 bindsym $mod+Shift+b exec chromium
 bindsym $mod+Shift+v exec virtualbox
