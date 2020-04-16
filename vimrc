@@ -8,6 +8,29 @@ filetype plugin on
 filetype plugin indent on
 "au BufEnter *.hs compiler ghc
 
+" errorformat=
+" %*[^"]"%f"%*\D%l: %m,
+" "%f"%*\D%l: %m,
+" %-G%f:%l: (Each undeclared identifier is reported only once,
+" %-G%f:%l: for each function it appears in.),
+" %-GIn file included from %f:%l:%c:,
+" %-GIn file included from %f:%l:%c\,,
+" %-GIn file included from %f:%l:%c,
+" %-GIn file included from %f:%l,
+" %-G%*[ ]from %f:%l:%c,
+" %-G%*[ ]from %f:%l:,
+" %-G%*[ ]from %f:%l\,,
+" %-G%*[ ]from %f:%l,
+" %f:%l:%c:%m,
+" %f(%l):%m,
+" %f:%l:%m,
+" "%f"\, line %l%*\D%c%*[^ ] %m,
+" %D%*\a[%*\d]: Entering directory %*[`']%f',
+" %X%*\a[%*\d]: Leaving directory %*[`']%f',
+" %D%*\a: Entering directory %*[`']%f',
+" %X%*\a: Leaving directory %*[`']%f',
+" %DMaking %*\a in %f,
+" %f|%l| %m
 execute pathogen#infect()
 	
 set hidden
@@ -23,6 +46,7 @@ set ai
 set laststatus=2
 set modeline
 set splitbelow
+set isf+=>
 
 " set undofile
 " set undodir=~/.vim/undo/
@@ -95,9 +119,10 @@ nmap <INS> :set nopaste!<CR>
 
 map <S-Tab> :wa<CR>:bnext<CR>
 
-let g:asyncrun_open = 8
+let g:asyncrun_open = 120
 nmap <CR> :wa<CR>
 nmap <Space> :wa<CR>:AsyncRun make<CR>
+nmap g<Space> :wa<CR>:AsyncRun make pedantic<CR>
 nmap <F6> :AsyncStop<CR>
 nmap <F7> :cclose<CR>
 nmap > :cn<CR>

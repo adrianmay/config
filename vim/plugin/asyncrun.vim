@@ -1692,12 +1692,12 @@ function! asyncrun#quickfix_toggle(size, ...)
 		endif
 	elseif l:mode == 1
 		if s:quickfix_open == 0
-			keepalt exec 'botright copen '. ((a:size > 0)? a:size : ' ')
+			keepalt exec 'vertical topleft copen '. ((a:size > 0)? a:size : ' ')
 			keepalt wincmd k
 		endif
 	elseif l:mode == 2
 		if s:quickfix_open == 0
-			keepalt exec 'botright copen '. ((a:size > 0)? a:size : ' ')
+			keepalt exec 'vertical topleft copen '. ((a:size > 0)? a:size : ' ')
 			keepalt wincmd k
 		else
 			silent! cclose
