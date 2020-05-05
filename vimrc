@@ -164,6 +164,11 @@ inoremap <ScrollWheelDown> <nop>
 vnoremap <ScrollWheelUp> <nop>
 vnoremap <ScrollWheelDown> <nop>
 
+tnoremap <C-l> <C-W>l
+tnoremap <C-h> <C-W>h
+tnoremap <C-j> <C-W>j
+tnoremap <C-k> <C-W>k
+
 map <M-Esc>[62~ <nop>
 map! <M-Esc>[62~ <nop>
 map <M-Esc>[63~ <nop>
