@@ -209,3 +209,6 @@ nnoremap <silent> <C-l> <c-w>l
 nnoremap <silent> <C-h> <c-w>h
 nnoremap <silent> <C-k> <c-w>k
 nnoremap <silent> <C-j> <c-w>j
+nnoremap <c-e> <c-u>
+
+

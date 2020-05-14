@@ -14,6 +14,7 @@ exec --no-startup-id do.xrandr
 
 focus_follows_mouse no
 exec --no-startup-id setxkbmap -layout gb
+exec --no-startup-id setxkbmap -device 3 -layout gb
 # exec syndaemon -dRki1
 # exec nm-applet
 exec --no-startup-id sleep 2; feh --bg-fill Wallpaper.jpg
