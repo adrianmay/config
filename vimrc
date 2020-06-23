@@ -1,5 +1,4 @@
 set nocompatible
-set mouse=
 let g:haddock_browser="/usr/bin/firefox"
 let maplocalleader=","
 syntax on
@@ -216,4 +215,8 @@ nnoremap <silent> <C-k> <c-w>k
 nnoremap <silent> <C-j> <c-w>j
 nnoremap <c-e> <c-u>
 
+set mouse=
+
+highlight ForbiddenWhitespace ctermbg=red guibg=red
+match ForbiddenWhitespace /\s\+$\|\t/
 

@@ -44,6 +44,7 @@ bindsym $mod+b exec firefox
 bindsym $mod+Shift+b exec chromium
 bindsym $mod+Shift+v exec virtualbox
 bindsym $mod+Shift+s exec slack
+bindsym $mod+Ctrl+s exec sudo systemctl suspend
 bindsym $mod+t exec --no-startup-id "killall -q syndaemon && synclient TouchpadOff=1 || ( synclient TouchpadOff=0 && syndaemon -dRki1 )"
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -178,5 +179,5 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command i3status
+        status_command /etc/config/i3status
 }
