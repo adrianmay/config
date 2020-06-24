@@ -122,6 +122,7 @@ let g:asyncrun_open = 120
 nmap <CR> :wa<CR>
 nmap <Space> :wa<CR>:AsyncRun make<CR>
 nmap g<Space> :wa<CR>:AsyncRun make pedantic<CR>
+nmap gg<Space> :wa<CR>:AsyncRun make ut<CR>
 nmap <F6> :AsyncStop<CR>
 nmap <F7> :cclose<CR>
 nmap > :cn<CR>
@@ -219,4 +220,5 @@ set mouse=
 
 highlight ForbiddenWhitespace ctermbg=red guibg=red
 match ForbiddenWhitespace /\s\+$\|\t/
+autocmd InsertEnter * match ForbiddenWhitespace /\t\|\s\+\%#\@<!$/
 
