@@ -68,7 +68,7 @@ hi StatusLineNC ctermfg=249 guifg=#b2b2b2 ctermbg=237 guibg=#3a3a3a cterm=none g
 " Enable CursorLine
 set cursorline
 highlight CursorLine cterm=bold 
-autocmd InsertEnter * highlight CursorLine ctermbg=darkgrey cterm=NONE 
+autocmd InsertEnter * highlight CursorLine ctermbg=darkblue cterm=NONE 
 autocmd InsertLeave * highlight CursorLine ctermbg=NONE cterm=NONE 
 " autocmd InsertEnter * highlight CursorLine ctermbg=white cterm=bold
 " autocmd InsertLeave * highlight CursorLine ctermbg=beige cterm=NONE

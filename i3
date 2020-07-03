@@ -59,6 +59,7 @@ bindsym $mod+d exec dmenu_run
 # screen lock
 bindsym $mod+BackSpace exec i3lock -c 000010
 bindsym $mod+Ctrl+Shift+s exec sudo /sbin/shutdown -h now
+bindsym $mod+Return exec dm-tool switch-to-greeter
 # bindsym $mod+Shift+s exec sudo /usr/sbin/pm-suspend  
 # change focus
 bindsym $mod+$Left focus left
