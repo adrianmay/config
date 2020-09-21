@@ -138,6 +138,7 @@ alias jclear="sudo journalctl --flush; sudo journalctl --rotate; sudo journalctl
 alias gitlog="git log --reflog --oneline --decorate --graph"
 alias cutt="cut -d ' ' -f"
 alias hgd="hg diff -r 'ancestor(default,.)'"
+alias xo=xdg-open
 
 # dir-local history ...
 setopt appendhistory autocd extendedglob notify autopushd pushdminus pushdsilent pushdtohome prompt_subst share_history hist_ignorealldups

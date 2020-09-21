@@ -12,9 +12,11 @@
 # exec_always --no-startup-id xrandr --output HDMI1 --above eDP1
 exec --no-startup-id do.xrandr
 
-focus_follows_mouse no
+focus_follows_mouse yes
 exec --no-startup-id setxkbmap -layout gb
 exec --no-startup-id setxkbmap -device 3 -layout gb
+exec --no-startup-id xrandr --output HDMI-0 --below DP-0
+
 # exec syndaemon -dRki1
 # exec nm-applet
 exec --no-startup-id sleep 2; feh --bg-fill Wallpaper.jpg
@@ -27,7 +29,11 @@ set $Up k
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below. ISO 10646 = Unicode
+# font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+font pango:DejaVu Sans Mono 16
+font pango:DejaVu Sans Mono, Terminus Bold Semi-Condensed 16
+font pango:Terminus 16px
 # The font above is very space-efficient, that is, it looks good, sharp and
 # clear in small sizes. However, if you need a lot of unicode glyphs or
 # right-to-left text rendering, you should instead use pango for rendering and
@@ -46,8 +52,10 @@ bindsym $mod+Shift+v exec virtualbox
 bindsym $mod+Shift+s exec slack
 bindsym $mod+Ctrl+s exec sudo systemctl suspend
 bindsym $mod+t exec --no-startup-id "killall -q syndaemon && synclient TouchpadOff=1 || ( synclient TouchpadOff=0 && syndaemon -dRki1 )"
-# kill focused window
+bindsym $mod+v exec --no-startup-id "gst-play-1.0 rtsp://192.168.1.120/live/main"
 bindsym $mod+Shift+q kill
+bindsym $mod+m exec --no-startup-id "xmodmap .Xmodmap; xkbset m"
+bindsym $mod+n exec --no-startup-id "nosemouse"
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec dmenu_run
@@ -60,7 +68,7 @@ bindsym $mod+d exec dmenu_run
 bindsym $mod+BackSpace exec i3lock -c 000010
 bindsym $mod+Ctrl+Shift+s exec sudo /sbin/shutdown -h now
 bindsym $mod+Return exec dm-tool switch-to-greeter
-# bindsym $mod+Shift+s exec sudo /usr/sbin/pm-suspend  
+# bindsym $mod+Shift+s exec sudo /usr/sbin/pm-suspend
 # change focus
 bindsym $mod+$Left focus left
 bindsym $mod+$Down focus down
@@ -94,7 +102,8 @@ bindsym $mod+f fullscreen
 # bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
+bindsym $mod+Shift+equal floating toggle
+bindsym $mod+Ctrl+equal sticky toggle
 # change focus between tiling / floating windows
 # bindsym $mod+space focus mode_toggle
 
