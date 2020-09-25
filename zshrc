@@ -135,10 +135,11 @@ alias sctl="sudo systemctl"
 alias nctl="sudo netctl"
 alias jctl=journalctl
 alias jclear="sudo journalctl --flush; sudo journalctl --rotate; sudo journalctl -m --vacuum-time=1s"
-alias gitlog="git log --reflog --oneline --decorate --graph"
+alias gog="git log --graph --all --reflog --pretty='%h%x09%ad %C(cyan)%d%n   %an%x09%Cgreen%s%Creset'"
 alias cutt="cut -d ' ' -f"
 alias hgd="hg diff -r 'ancestor(default,.)'"
 alias xo=xdg-open
+alias t=". ~/bin/t"
 
 # dir-local history ...
 setopt appendhistory autocd extendedglob notify autopushd pushdminus pushdsilent pushdtohome prompt_subst share_history hist_ignorealldups
@@ -192,7 +193,7 @@ function precmd() {
 PROMPT='%(!.$PR_WHITE$PR_BK_RED.$PR_TEMP$PR_BK_GREEN)%~${(e)PR_PADDING}%n@%m${(e)PR_PADDING} %w %T%E
 %?|%! $PR_NO_COLOUR$([ -f /usr/share/sounds/popq.wav ] && aplay -q /usr/share/sounds/popq.wav &)'
 
-PATH=~/bin:$PATH
+PATH=~/.config/bin:~/.local/bin:~/bin:$PATH
 export P4CONFIG=~/p4.conf
 export PRINTER=`cat ~/.printer`
 

@@ -9,16 +9,13 @@
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
-# exec_always --no-startup-id xrandr --output HDMI1 --above eDP1
-exec --no-startup-id do.xrandr
 
-focus_follows_mouse yes
+focus_follows_mouse no
 exec --no-startup-id setxkbmap -layout gb
 exec --no-startup-id setxkbmap -device 3 -layout gb
-exec --no-startup-id xrandr --output HDMI-0 --below DP-0
+exec --no-startup-id do.xrandr
 
 # exec syndaemon -dRki1
-# exec nm-applet
 exec --no-startup-id sleep 2; feh --bg-fill Wallpaper.jpg
 set $mod Mod4
 
@@ -30,15 +27,16 @@ set $Up k
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below. ISO 10646 = Unicode
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
-font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
-font pango:DejaVu Sans Mono 16
-font pango:DejaVu Sans Mono, Terminus Bold Semi-Condensed 16
-font pango:Terminus 16px
+# font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+font pango:monospace 10
+# font pango:DejaVu Sans Mono 160
+# font pango:DejaVu Sans Mono, Terminus Bold Semi-Condensed 160
+# font pango:Terminus 160px
 # The font above is very space-efficient, that is, it looks good, sharp and
 # clear in small sizes. However, if you need a lot of unicode glyphs or
 # right-to-left text rendering, you should instead use pango for rendering and
 # chose a FreeType font, such as:
-# font pango:DejaVu Sans Mono 10
+# font pango:DejaVu Sans Mono 12
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -46,16 +44,18 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+space exec i3-sensible-terminal
 bindsym $mod+Ctrl+space exec i3-sensible-terminal -x ssh adrianmay@work
-bindsym $mod+b exec firefox
-bindsym $mod+Shift+b exec chromium
+bindsym $mod+b exec chromium
 bindsym $mod+Shift+v exec virtualbox
-bindsym $mod+Shift+s exec slack
+bindsym $mod+s exec slack
+bindsym $mod+c exec clementine
 bindsym $mod+Ctrl+s exec sudo systemctl suspend
 bindsym $mod+t exec --no-startup-id "killall -q syndaemon && synclient TouchpadOff=1 || ( synclient TouchpadOff=0 && syndaemon -dRki1 )"
 bindsym $mod+v exec --no-startup-id "gst-play-1.0 rtsp://192.168.1.120/live/main"
 bindsym $mod+Shift+q kill
-bindsym $mod+m exec --no-startup-id "xmodmap .Xmodmap; xkbset m"
+bindsym $mod+m exec --no-startup-id "xkbcomp /etc/config/xk :0 ;xkbset m"
 bindsym $mod+n exec --no-startup-id "nosemouse"
+bindsym $mod+Prior exec --no-startup-id do.xrandr
+bindsym $mod+Next exec --no-startup-id dont.xrandr
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec dmenu_run
@@ -189,5 +189,5 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command /etc/config/i3status
+        status_command i3status
 }
