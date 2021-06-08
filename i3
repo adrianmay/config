@@ -13,8 +13,8 @@
 focus_follows_mouse yes
 exec --no-startup-id setxkbmap -layout gb
 exec --no-startup-id setxkbmap -device 3 -layout gb
-exec --no-startup-id do.xrandr
 exec --no-startup-id mouskeys
+exec --no-startup-id /etc/do.xrandr
 
 # exec syndaemon -dRki1
 exec --no-startup-id sleep 2; feh --bg-fill Wallpaper.jpg
@@ -55,8 +55,8 @@ bindsym $mod+v exec --no-startup-id "gst-play-1.0 rtsp://192.168.1.120/live/main
 bindsym $mod+Shift+q kill
 bindsym $mod+n exec --no-startup-id "nosemouse"
 bindsym $mod+m exec --no-startup-id "mouskeys"
-bindsym $mod+Prior exec --no-startup-id do.xrandr
-bindsym $mod+Next exec --no-startup-id dont.xrandr
+bindsym $mod+Prior exec --no-startup-id /etc/do.xrandr
+bindsym $mod+Next exec --no-startup-id /etc/dont.xrandr
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec dmenu_run
