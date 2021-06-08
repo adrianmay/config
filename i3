@@ -10,10 +10,11 @@
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
 
-focus_follows_mouse no
+focus_follows_mouse yes
 exec --no-startup-id setxkbmap -layout gb
 exec --no-startup-id setxkbmap -device 3 -layout gb
 exec --no-startup-id do.xrandr
+exec --no-startup-id mouskeys
 
 # exec syndaemon -dRki1
 exec --no-startup-id sleep 2; feh --bg-fill Wallpaper.jpg
@@ -52,8 +53,8 @@ bindsym $mod+Ctrl+s exec sudo systemctl suspend
 bindsym $mod+t exec --no-startup-id "killall -q syndaemon && synclient TouchpadOff=1 || ( synclient TouchpadOff=0 && syndaemon -dRki1 )"
 bindsym $mod+v exec --no-startup-id "gst-play-1.0 rtsp://192.168.1.120/live/main"
 bindsym $mod+Shift+q kill
-bindsym $mod+m exec --no-startup-id "xkbcomp /etc/config/xk :0 ;xkbset m"
 bindsym $mod+n exec --no-startup-id "nosemouse"
+bindsym $mod+m exec --no-startup-id "mouskeys"
 bindsym $mod+Prior exec --no-startup-id do.xrandr
 bindsym $mod+Next exec --no-startup-id dont.xrandr
 

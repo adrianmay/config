@@ -118,11 +118,11 @@ nmap <INS> :set nopaste!<CR>
 
 map <S-Tab> :wa<CR>:bnext<CR>
 
-let g:asyncrun_open = 120
+let g:asyncrun_open = 80
 nmap <CR> :wa<CR>
 nmap <Space> :wa<CR>:AsyncRun make<CR>
 nmap g<Space> :wa<CR>:AsyncRun make pedantic<CR>
-nmap gg<Space> :wa<CR>:AsyncRun make ut<CR>
+nmap gg<Space> :wa<CR>:AsyncRun hint<CR>
 nmap <F6> :AsyncStop<CR>
 nmap <F7> :cclose<CR>
 nmap > :cn<CR>

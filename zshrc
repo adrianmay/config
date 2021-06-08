@@ -141,6 +141,36 @@ alias hgd="hg diff -r 'ancestor(default,.)'"
 alias xo=xdg-open
 alias t=". ~/bin/t"
 
+giff () {
+  git diff -U20 "$1^" $1
+}
+
+giff0 () {
+  git diff -U0 "$1^" $1
+}
+
+recent () {
+  git log --name-only --format= -n 100 --author=Adrian | awk '!a[$1]++'
+}
+
+recenthg () {
+  hg log -l 100 -u Adrian -T '{files}\n' | tr ' ' '\n' | sed '/^$/d' | awk '!a[$1]++'
+}
+
+revhg () {
+  hg log -T '{node}\n' -b default -k "Merge with TRENT-$1" | tac | while read C; do echo; echo "============================== $C ========================="; hg diff -U15 --pager=never -wc $C ; done
+}
+
+revgit () {
+    git log --format="%h" --grep "Merge branch 'TRENT-$1" | tac | while read C; do echo -e "\n##############################################################\n"; git --no-pager show -m $C; done
+}
+
+mergesBy () {
+  gog | grep -C1 $1 | grep "into 'master'" -B1 | grep 'tag: tv-' | sed 's/^[* |]*//' | cut -f 1 | tac
+}
+
+alias review=revgit
+
 # dir-local history ...
 setopt appendhistory autocd extendedglob notify autopushd pushdminus pushdsilent pushdtohome prompt_subst share_history hist_ignorealldups
 
@@ -193,9 +223,10 @@ function precmd() {
 PROMPT='%(!.$PR_WHITE$PR_BK_RED.$PR_TEMP$PR_BK_GREEN)%~${(e)PR_PADDING}%n@%m${(e)PR_PADDING} %w %T%E
 %?|%! $PR_NO_COLOUR$([ -f /usr/share/sounds/popq.wav ] && aplay -q /usr/share/sounds/popq.wav &)'
 
-PATH=~/.config/bin:~/.local/bin:~/bin:$PATH
+PATH=~/.config/bin:~/.local/bin:~/bin:~/.daml/bin:$PATH
 export P4CONFIG=~/p4.conf
 export PRINTER=`cat ~/.printer`
+export JAVA_HOME=/usr/lib/jvm/default
 
 ulimit -c unlimited
 
