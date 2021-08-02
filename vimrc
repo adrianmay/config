@@ -33,6 +33,7 @@ filetype plugin indent on
 " %f|%l| %m
 execute pathogen#infect()
 	
+set noequalalways
 set hidden
 set nobackup
 set nowritebackup
@@ -79,8 +80,8 @@ else
   inoremap <silent><expr> <c-@> coc#refresh()
 endif
 
-inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
-                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+" inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
+"                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 " Use `[g` and `]g` to navigate diagnostics
 " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
@@ -276,11 +277,16 @@ map <S-Tab> :wa<CR>:bnext<CR>
 
 let g:asyncrun_open = 80
 nmap <CR> :wa<CR>
-nmap <Space> :wa<CR>:AsyncRun make<CR>
-nmap g<Space> :wa<CR>:AsyncRun make pedantic<CR>
-nmap gg<Space> :wa<CR>:AsyncRun hint<CR>
+nmap <Space> :wa<CR>:AsyncRun make notests_noped<CR>
+nmap gtp<Space> :wa<CR>:AsyncRun make tests_ped<CR>
+nmap gpt<Space> :wa<CR>:AsyncRun make tests_ped<CR>
+nmap gp<Space> :wa<CR>:AsyncRun make notests_ped<CR>
+nmap gt<Space> :wa<CR>:AsyncRun make tests_noped<CR>
+nmap gh<Space> :wa<CR>:AsyncRun hint<CR>
 nmap <F6> :AsyncStop<CR>
+nmap g<Space> :AsyncStop<CR>
 nmap <F7> :cclose<CR>
+nmap gg<Space> :cclose<CR>
 nmap > :cn<CR>
 nmap < :cp<CR>
 
@@ -371,6 +377,11 @@ nnoremap <silent> <C-h> <c-w>h
 nnoremap <silent> <C-k> <c-w>k
 nnoremap <silent> <C-j> <c-w>j
 nnoremap <c-e> <c-u>
+
+nnoremap <C-Left> 20<C-W><
+nnoremap <C-Right> 20<C-W>>
+nnoremap <C-Up> 10<C-W>-
+nnoremap <C-Down> 10<C-W>+
 
 set mouse=
 

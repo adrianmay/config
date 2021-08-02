@@ -142,7 +142,7 @@ alias xo=xdg-open
 alias t=". ~/bin/t"
 
 giff () {
-  git diff -U20 "$1^" $1
+  git diff -wU20 "$1^" $1
 }
 
 giff0 () {
@@ -150,7 +150,7 @@ giff0 () {
 }
 
 recent () {
-  git log --name-only --format= -n 100 --author=Adrian | awk '!a[$1]++'
+  git log --name-only --format= -n 1000000 --author=Adrian | awk '!a[$1]++'
 }
 
 recenthg () {
