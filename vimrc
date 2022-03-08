@@ -2,10 +2,7 @@ set encoding=utf-8
 set nocompatible
 let g:haddock_browser="/usr/bin/firefox"
 let maplocalleader=","
-syntax on
-filetype plugin on
-"set ofu=syntaxcomplete#Complete
-filetype plugin indent on
+set ofu=syntaxcomplete#Complete
 "au BufEnter *.hs compiler ghc
 
 " errorformat=
@@ -56,6 +53,7 @@ set isf+=>
 set updatetime=300
 set shortmess+=c
 
+
 if has("nvim-0.5.0") || has("patch-8.1.1564")
   " Recently vim can merge signcolumn and number column into one
   set signcolumn=number
@@ -85,6 +83,14 @@ endif
 
 " Use `[g` and `]g` to navigate diagnostics
 " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
+call plug#begin('~/.vim/plugged')
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'rust-lang/rust.vim'
+call plug#end()
+syntax on
+filetype plugin on
+filetype plugin indent on
+"
 nmap <silent> <C-N> <Plug>(coc-diagnostic-next)
 " nmap <silent> <C-N> <Plug>(coc-diagnostic-prev)
 
@@ -209,7 +215,8 @@ set background=light
 " colorscheme evening
 " colorscheme bw
 " colorscheme winter
-colorscheme abra
+" colorscheme abra
+colorscheme ChocolatePapaya
 
 
 " highlight Normal cterm=bold ctermbg=black
@@ -219,11 +226,13 @@ hi StatusLineNC ctermfg=249 guifg=#b2b2b2 ctermbg=237 guibg=#3a3a3a cterm=none g
 " Enable CursorLine
 set cursorline
 highlight CursorLine gui=bold 
-autocmd InsertEnter * highlight CursorLine guibg=darkblue gui=NONE 
+autocmd InsertEnter * highlight CursorLine guibg=yellow gui=NONE 
 autocmd InsertLeave * highlight CursorLine guibg=NONE gui=NONE 
-" autocmd InsertEnter * highlight CursorLine ctermbg=white cterm=bold
-" autocmd InsertLeave * highlight CursorLine ctermbg=beige cterm=NONE
-highlight MatchParen cterm=bold guibg=DarkMagenta guifg=white
+" autocmd InsertEnter * highlight CursorLine ctermbg=Yellow cterm=bold
+" autocmd InsertLeave * highlight CursorLine ctermbg=NONE cterm=NONE
+" autocmd InsertEnter * set cursorline
+" autocmd InsertLeave * set nocursorline
+highlight MatchParen cterm=bold guibg=Gray guifg=black
 " ctermbg=Blue
 
 augroup CursorLine
@@ -277,7 +286,7 @@ map <S-Tab> :wa<CR>:bnext<CR>
 
 let g:asyncrun_open = 80
 nmap <CR> :wa<CR>
-nmap <Space> :wa<CR>:AsyncRun make notests_noped<CR>
+nmap <Space> :wa<CR>:AsyncRun make<CR>
 nmap gtp<Space> :wa<CR>:AsyncRun make tests_ped<CR>
 nmap gpt<Space> :wa<CR>:AsyncRun make tests_ped<CR>
 nmap gp<Space> :wa<CR>:AsyncRun make notests_ped<CR>
@@ -395,4 +404,6 @@ if exists('+termguicolors')
   let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
   set termguicolors
 endif
+
+au FocusGained,BufEnter * :checktime
 

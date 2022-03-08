@@ -21,7 +21,7 @@ if s:ChocolatePapaya_style == 'light'
     hi DiffAdd guibg=LightGreen ctermbg=DarkGreen ctermfg=White
     hi DiffChange guibg=LightCyan3 ctermbg=DarkCyan ctermfg=White
     hi DiffText gui=NONE guibg=Gray80 ctermbg=DarkCyan ctermfg=Yellow
-    hi Comment guifg=MediumBlue
+    hi Comment guifg=Gray
     hi Constant guifg=DeepPink
     hi PreProc guifg=DarkMagenta
     hi StatusLine guibg=White guifg=#5f3705 cterm=bold ctermbg=Brown ctermfg=White
@@ -39,7 +39,7 @@ else
     hi DiffText gui=NONE guibg=DarkCyan guifg=Yellow ctermbg=DarkCyan ctermfg=Yellow
     hi DiffChange guibg=DarkCyan guifg=White ctermbg=DarkCyan ctermfg=White
     hi Constant ctermfg=Red
-    hi Comment guifg=LightBlue3
+    hi Comment guifg=Gray
     hi PreProc guifg=Plum ctermfg=Magenta
     hi StatusLine guibg=White guifg=Sienna4 cterm=NONE ctermfg=Black ctermbg=Brown
     hi StatusLineNC gui=NONE guifg=Black guibg=Gray ctermbg=Black ctermfg=Gray
