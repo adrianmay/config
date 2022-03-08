@@ -139,7 +139,7 @@ alias gog="git log --graph --all --reflog --pretty='%h%x09%ad %C(cyan)%d%n   %an
 alias cutt="cut -d ' ' -f"
 alias hgd="hg diff -r 'ancestor(default,.)'"
 alias xo=xdg-open
-alias t=". ~/bin/t"
+alias t=". ~/.local/bin/t"
 
 giff () {
   git diff -wU20 "$1^" $1
@@ -234,6 +234,8 @@ stty stop ''
 stty start ''
 stty -ixon
 stty -ixoff
+
+. $HOME/.nvm/nvm.sh
 
 cat DOING
 
