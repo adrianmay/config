@@ -135,18 +135,26 @@ alias sctl="sudo systemctl"
 alias nctl="sudo netctl"
 alias jctl=journalctl
 alias jclear="sudo journalctl --flush; sudo journalctl --rotate; sudo journalctl -m --vacuum-time=1s"
-alias gog="git log --graph --all --reflog --pretty='%h%x09%ad %C(cyan)%d%n   %an%x09%Cgreen%s%Creset'"
+alias gog="git log --graph --all --reflog --pretty='%x09%h%x09%ad %C(cyan)%an%x09%C(yellow)%d%x09%Cgreen%s%Creset'"
 alias cutt="cut -d ' ' -f"
 alias hgd="hg diff -r 'ancestor(default,.)'"
 alias xo=xdg-open
 alias t=". ~/.local/bin/t"
 
+giffn () {
+  git diff -wU$1 "$2^" $2 $3
+}
+
 giff () {
-  git diff -wU20 "$1^" $1
+  git diff -wU20 "$1^" $1 $2
 }
 
 giff0 () {
   git diff -U0 "$1^" $1
+}
+
+glame () {
+  git log $1 | grep -Po "^[^ \t]*" | while read C; do git diff -U0 "$C^" $C | grep $2 && echo $C;done
 }
 
 recent () {
@@ -223,7 +231,7 @@ function precmd() {
 PROMPT='%(!.$PR_WHITE$PR_BK_RED.$PR_TEMP$PR_BK_GREEN)%~${(e)PR_PADDING}%n@%m${(e)PR_PADDING} %w %T%E
 %?|%! $PR_NO_COLOUR$([ -f /usr/share/sounds/popq.wav ] && aplay -q /usr/share/sounds/popq.wav &)'
 
-PATH=~/.config/bin:~/.local/bin:~/bin:~/.daml/bin:$PATH
+PATH=~/.config/bin:~/.local/bin:~/bin:~/.cargo/bin:$PATH
 export P4CONFIG=~/p4.conf
 export PRINTER=`cat ~/.printer`
 export JAVA_HOME=/usr/lib/jvm/default
@@ -245,4 +253,8 @@ if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
   . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
 fi
 # End Nix
+
+source /usr/share/nvm/init-nvm.sh
+source /home/ad/build/emsdk/emsdk_env.sh
+
 

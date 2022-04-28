@@ -2,7 +2,10 @@ set encoding=utf-8
 set nocompatible
 let g:haddock_browser="/usr/bin/firefox"
 let maplocalleader=","
-set ofu=syntaxcomplete#Complete
+syntax on
+filetype plugin on
+"set ofu=syntaxcomplete#Complete
+filetype plugin indent on
 "au BufEnter *.hs compiler ghc
 
 " errorformat=
@@ -222,6 +225,8 @@ colorscheme ChocolatePapaya
 hi Normal cterm=bold ctermbg=230
 hi StatusLine   ctermfg=15  guifg=#ffffff ctermbg=239 guibg=#4e4e4e cterm=bold gui=bold
 hi StatusLineNC ctermfg=249 guifg=#b2b2b2 ctermbg=237 guibg=#3a3a3a cterm=none gui=none
+hi Search guifg=#ffffff guibg=#4e4e4e ctermbg=LightYellow cterm=bold cterm=NONE
+set hlsearch
 
 " Enable CursorLine
 set cursorline
@@ -407,5 +412,6 @@ highlight CocErrorFloat ctermfg=yellow cterm=bold
 
 set termguicolors
 
+au FocusGained,BufEnter * :checktime
 au FocusGained,BufEnter * :checktime
 
