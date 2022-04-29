@@ -139,7 +139,7 @@ alias gog="git log --graph --all --reflog --pretty='%x09%h%x09%ad %C(cyan)%an%x0
 alias cutt="cut -d ' ' -f"
 alias hgd="hg diff -r 'ancestor(default,.)'"
 alias xo=xdg-open
-alias t=". ~/bin/t"
+alias t=". ~/.local/bin/t"
 
 giffn () {
   git diff -wU$1 "$2^" $2 $3
@@ -243,6 +243,8 @@ stty start ''
 stty -ixon
 stty -ixoff
 
+. $HOME/.nvm/nvm.sh
+
 cat DOING
 
 
@@ -254,4 +256,5 @@ fi
 
 source /usr/share/nvm/init-nvm.sh
 source /home/ad/build/emsdk/emsdk_env.sh
+
 
