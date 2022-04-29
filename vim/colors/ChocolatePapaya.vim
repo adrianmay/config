@@ -14,7 +14,7 @@ endif
 let g:colors_name = "ChocolatePapaya"
 
 if s:ChocolatePapaya_style == 'light'
-    hi Normal guifg=#3f1f1f guibg=PapayaWhip ctermbg=Gray ctermfg=Black
+    hi Normal guifg=#3f1f1f guibg=PapayaWhip ctermbg=White ctermfg=Black
     hi NonText guibg=Moccasin guifg=Brown ctermfg=Brown
     hi LineNr guibg=Moccasin
     hi DiffDelete guibg=LightRed guifg=Black ctermbg=DarkRed ctermfg=White
