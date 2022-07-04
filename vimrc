@@ -225,7 +225,7 @@ colorscheme ChocolatePapaya
 hi Normal cterm=bold ctermbg=230
 hi StatusLine   ctermfg=15  guifg=#ffffff ctermbg=239 guibg=#4e4e4e cterm=bold gui=bold
 hi StatusLineNC ctermfg=249 guifg=#b2b2b2 ctermbg=237 guibg=#3a3a3a cterm=none gui=none
-hi Search guifg=#ffffff guibg=#4e4e4e ctermbg=LightYellow cterm=bold cterm=NONE
+hi QuickFixLine guifg=#ffffff guibg=#4e4e4e ctermbg=LightGreen cterm=bold cterm=NONE
 set hlsearch
 
 " Enable CursorLine
@@ -399,10 +399,10 @@ nnoremap <C-Down> 10<C-W>+
 
 set mouse=
 
-highlight ForbiddenWhitespace ctermbg=red guibg=red
-match ForbiddenWhitespace /\s\+$\|\t/
-autocmd InsertEnter * match ForbiddenWhitespace /\t\|\s\+\%#\@<!$/
-highlight CocErrorFloat ctermfg=yellow cterm=bold
+"highlight ForbiddenWhitespace ctermbg=red guibg=red
+"match ForbiddenWhitespace /\s\+$\|\t/
+"autocmd InsertEnter * match ForbiddenWhitespace /\t\|\s\+\%#\@<!$/
+"highlight CocErrorFloat ctermfg=yellow cterm=bold
 
 " if exists('+termguicolors')
 "   let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
