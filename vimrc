@@ -33,6 +33,7 @@ filetype plugin indent on
 " %f|%l| %m
 execute pathogen#infect()
 	
+set scrolloff=10000
 set noequalalways
 set hidden
 set nobackup
@@ -208,7 +209,6 @@ filetype plugin indent on
 " set undofile
 " set undodir=~/.vim/undo/
 
-set scrolloff=10000
 
 set background=light
 " colorscheme adrian
@@ -291,13 +291,10 @@ map <S-Tab> :wa<CR>:bnext<CR>
 
 let g:asyncrun_open = 80
 nmap <CR> :wa<CR>
+nmap <Space><Space> :wa<CR>:AsyncRun make test<CR>
 nmap <Space> :wa<CR>:AsyncRun make<CR>
-nmap gtp<Space> :wa<CR>:AsyncRun make tests_ped<CR>
-nmap gpt<Space> :wa<CR>:AsyncRun make tests_ped<CR>
-nmap gp<Space> :wa<CR>:AsyncRun make notests_ped<CR>
-nmap gt<Space> :wa<CR>:AsyncRun make tests_noped<CR>
 nmap gh<Space> :wa<CR>:AsyncRun hint<CR>
-nmap <F6> :AsyncStop<CR>
+nmap <Delete> :AsyncStop<CR>
 nmap g<Space> :AsyncStop<CR>
 nmap <F7> :cclose<CR>
 nmap gg<Space> :cclose<CR>
@@ -415,3 +412,5 @@ set termguicolors
 au FocusGained,BufEnter * :checktime
 au FocusGained,BufEnter * :checktime
 
+set wildmode=longest,list,full
+set wildmenu

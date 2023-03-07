@@ -247,6 +247,11 @@ stty -ixoff
 
 cat DOING
 
+ffind() {
+  DIR=${2:=.}
+  REGEX=$1
+  find $DIR -type f | xargs grep $REGEX
+}
 
 # Nix
 if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
@@ -254,7 +259,14 @@ if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
 fi
 # End Nix
 
-source /usr/share/nvm/init-nvm.sh
-source /home/ad/build/emsdk/emsdk_env.sh
+# source /usr/share/nvm/init-nvm.sh
+# source /home/ad/build/emsdk/emsdk_env.sh
 
+
+
+[ -f "/home/ad/.ghcup/env" ] && source "/home/ad/.ghcup/env" # ghcup-env
+ 
+alias n="nix-shell --command zsh haskell.nix"
+alias t="nix-build nix/ci.nix -A tiko-tests.haskell --option sandbox false"
+alias x=xdg-open
 

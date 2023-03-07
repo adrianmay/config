@@ -11,6 +11,10 @@ exec --no-startup-id setxkbmap -layout gb
 exec --no-startup-id setxkbmap -device 3 -layout gb
 exec --no-startup-id mouskeys
 exec --no-startup-id /etc/do.xrandr
+exec --no-startup-id xscreensaver --no-splash &
+
+# exec_always --no-startup-id xset dpms 0 0 30 &
+# exec_always --no-startup-id xss-lock -- i3lock -n &
 
 # exec syndaemon -dRki1
 exec --no-startup-id sleep 2; feh --bg-fill Wallpaper.jpg
@@ -47,10 +51,11 @@ bindsym $mod+s exec slack
 bindsym $mod+c exec clementine
 bindsym $mod+Ctrl+s exec sudo systemctl suspend
 bindsym $mod+t exec --no-startup-id "killall -q syndaemon && synclient TouchpadOff=1 || ( synclient TouchpadOff=0 && syndaemon -dRki1 )"
-bindsym $mod+v exec --no-startup-id "mpv rtsp://192.168.1.120/live/main"
+bindsym $mod+v exec --no-startup-id "mpv --profile=low-latency --untimed rtsp://10.0.0.8/live/main"
 bindsym $mod+Shift+q kill
+bindsym $mod+q kill
 bindsym $mod+n exec --no-startup-id "nosemouse"
-bindsym $mod+m exec --no-startup-id "mouskeys"
+bindsym $mod+m exec --no-startup-id "/usr/bin/mouskeys"
 bindsym $mod+Prior exec --no-startup-id /etc/do.xrandr
 bindsym $mod+Next exec --no-startup-id /etc/dont.xrandr
 
@@ -62,9 +67,9 @@ bindsym $mod+d exec dmenu_run
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # screen lock
-bindsym $mod+BackSpace exec i3lock -c 000010
+# bindsym $mod+BackSpace exec i3lock -c 000010
 bindsym $mod+Ctrl+Shift+s exec sudo /sbin/shutdown -h now
-bindsym $mod+Return exec dm-tool switch-to-greeter
+# bindsym $mod+Return exec dm-tool switch-to-greeter
 # bindsym $mod+Shift+s exec sudo /usr/sbin/pm-suspend
 # change focus
 bindsym $mod+$Left focus left
