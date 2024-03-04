@@ -140,6 +140,7 @@ alias cutt="cut -d ' ' -f"
 alias hgd="hg diff -r 'ancestor(default,.)'"
 alias xo=xdg-open
 alias t=". ~/.local/bin/t"
+alias find.="find . -not -path '*/.*'"
 
 giffn () {
   git diff -wU$1 "$2^" $2 $3
@@ -269,4 +270,8 @@ fi
 alias n="nix-shell --command zsh haskell.nix"
 alias t="nix-build nix/ci.nix -A tiko-tests.haskell --option sandbox false"
 alias x=xdg-open
+
+export PATH=/usr/local/cuda/bin${PATH:+:${PATH}}
+export LD_LIBRARY_PATH=/usr/local/cuda-12.2/lib64\
+                         ${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
 

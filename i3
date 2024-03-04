@@ -77,7 +77,7 @@ bindsym $mod+$Down focus down
 bindsym $mod+$Up focus up
 bindsym $mod+$Right focus right
 
-bindsym $mod+Ctrl+e exec --no-startup-id "sleep 0.5; xvkbd -text adrian.alexander.may@gmail.com"
+bindsym $mod+e exec --no-startup-id "sleep 0.5; xvkbd -text adrian.alexander.may@gmail.com"
 # move focused window
 bindsym $mod+Shift+$Left move left
 bindsym $mod+Shift+$Down move down
