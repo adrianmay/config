@@ -14,7 +14,7 @@ exec --no-startup-id /etc/do.xrandr
 exec --no-startup-id xscreensaver --no-splash &
 
 # exec_always --no-startup-id xset dpms 0 0 30 &
-# exec_always --no-startup-id xss-lock -- i3lock -n &
+exec_always --no-startup-id xss-lock -- i3lock -n &
 
 # exec syndaemon -dRki1
 exec --no-startup-id sleep 2; feh --bg-fill Wallpaper.jpg
@@ -44,7 +44,7 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+space exec i3-sensible-terminal
-bindsym $mod+Ctrl+space exec i3-sensible-terminal -x ssh adrianmay@work
+bindsym $mod+Ctrl+space exec i3-sensible-terminal -x ssh 10.0.0.10
 bindsym $mod+b exec chromium
 bindsym $mod+Shift+v exec virtualbox
 bindsym $mod+s exec slack
@@ -169,7 +169,7 @@ bindsym $mod+Shift+r reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Ctrl+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+BackSpace exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Delete exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -219,5 +219,5 @@ set $volumestep 5
 # append "-c $alsacard" without quotes to override default card
 bindsym XF86AudioRaiseVolume exec --no-startup-id $volumepath -an -t $statuscmd -u $statussig up $volumestep
 bindsym XF86AudioLowerVolume exec --no-startup-id $volumepath -an -t $statuscmd -u $statussig down $volumestep
-bindsym XF86AudioMute        exec --no-startup-id $volumepath -an -t $statuscmd -u $statussig mute
+bindsym XF86AudioMute        exec --no-startup-id $volumepath -an -t $statuscmd -u $statussig mute 
 

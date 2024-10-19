@@ -141,6 +141,7 @@ alias hgd="hg diff -r 'ancestor(default,.)'"
 alias xo=xdg-open
 alias t=". ~/.local/bin/t"
 alias find.="find . -not -path '*/.*'"
+alias fj='find . -type f | grep -vP "node_modules|\.sst|\.vscode|\.git|/dist/|.stack-work"'
 
 giffn () {
   git diff -wU$1 "$2^" $2 $3
@@ -233,6 +234,10 @@ PROMPT='%(!.$PR_WHITE$PR_BK_RED.$PR_TEMP$PR_BK_GREEN)%~${(e)PR_PADDING}%n@%m${(e
 %?|%! $PR_NO_COLOUR$([ -f /usr/share/sounds/popq.wav ] && aplay -q /usr/share/sounds/popq.wav &)'
 
 PATH=~/.config/bin:~/.local/bin:~/bin:~/.cargo/bin:$PATH
+# pnpm
+export PNPM_HOME="/home/ad/.local/share/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end
 export P4CONFIG=~/p4.conf
 export PRINTER=`cat ~/.printer`
 export JAVA_HOME=/usr/lib/jvm/default
@@ -267,11 +272,9 @@ fi
 
 [ -f "/home/ad/.ghcup/env" ] && source "/home/ad/.ghcup/env" # ghcup-env
  
-alias n="nix-shell --command zsh haskell.nix"
-alias t="nix-build nix/ci.nix -A tiko-tests.haskell --option sandbox false"
 alias x=xdg-open
 
 export PATH=/usr/local/cuda/bin${PATH:+:${PATH}}
-export LD_LIBRARY_PATH=/usr/local/cuda-12.2/lib64\
-                         ${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+# export LD_LIBRARY_PATH=/usr/local/cuda-12.2/lib64\${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
 
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
