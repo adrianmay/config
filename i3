@@ -44,14 +44,14 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+space exec i3-sensible-terminal
-bindsym $mod+Ctrl+space exec i3-sensible-terminal -x ssh 10.0.0.10
+bindsym $mod+Ctrl+space exec gnome-terminal -- ssh 10.1.1.10
 bindsym $mod+b exec chromium
 bindsym $mod+Shift+v exec virtualbox
 bindsym $mod+s exec slack
 bindsym $mod+c exec clementine
 bindsym $mod+Ctrl+s exec sudo systemctl suspend
 bindsym $mod+t exec --no-startup-id "killall -q syndaemon && synclient TouchpadOff=1 || ( synclient TouchpadOff=0 && syndaemon -dRki1 )"
-bindsym $mod+v exec --no-startup-id "mpv --profile=low-latency --untimed rtsp://10.0.0.8/live/main"
+bindsym $mod+v exec --no-startup-id "mpv --profile=low-latency --untimed rtsp://10.1.1.8/live/main"
 bindsym $mod+Shift+q kill
 bindsym $mod+q kill
 bindsym $mod+n exec --no-startup-id "nosemouse"
