@@ -29,7 +29,7 @@ set $Up k
 # is used in the bar {} block below. ISO 10646 = Unicode
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
-font pango:monospace 10
+font pango:monospace 14
 # font pango:DejaVu Sans Mono 160
 # font pango:DejaVu Sans Mono, Terminus Bold Semi-Condensed 160
 # font pango:Terminus 160px
