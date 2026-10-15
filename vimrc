@@ -33,6 +33,7 @@ filetype plugin indent on
 " %f|%l| %m
 execute pathogen#infect()
 	
+set exrc
 set scrolloff=10000
 set noequalalways
 set hidden
@@ -82,12 +83,13 @@ endif
 "   inoremap <silent><expr> <c-@> coc#refresh()
 " endif
 
-" inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
-"                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 " Use `[g` and `]g` to navigate diagnostics
 " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
 call plug#begin('~/.vim/plugged')
+Plug 'skywind3000/asyncrun.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'rust-lang/rust.vim'
 call plug#end()
@@ -110,7 +112,7 @@ filetype plugin indent on
 " function! s:show_documentation()
 "   if (index(['vim','help'], &filetype) >= 0)
 "     execute 'h '.expand('<cword>')
-"   elseif (coc#rpc#ready())
+"   elseif (moc#rpc#ready())
 "     call CocActionAsync('doHover')
 "   else
 "     execute '!' . &keywordprg . " " . expand('<cword>')

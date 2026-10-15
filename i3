@@ -7,8 +7,8 @@
 
 
 focus_follows_mouse yes
-exec --no-startup-id setxkbmap -layout gb
-exec --no-startup-id setxkbmap -device 3 -layout gb
+# exec --no-startup-id setxkbmap -layout gb
+# exec --no-startup-id setxkbmap -device 3 -layout gb
 exec --no-startup-id mouskeys
 exec --no-startup-id /etc/do.xrandr
 exec --no-startup-id xscreensaver --no-splash &
@@ -221,3 +221,6 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id $volumepath -an -t $statuscmd 
 bindsym XF86AudioLowerVolume exec --no-startup-id $volumepath -an -t $statuscmd -u $statussig down $volumestep
 bindsym XF86AudioMute        exec --no-startup-id $volumepath -an -t $statuscmd -u $statussig mute 
 
+
+# The Proxmox host mox: open one of its VMs over RDP.
+bindsym $mod+o exec --no-startup-id rdp-pick

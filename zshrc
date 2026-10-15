@@ -270,7 +270,6 @@ fi
 
 
 
-[ -f "/home/ad/.ghcup/env" ] && source "/home/ad/.ghcup/env" # ghcup-env
  
 alias x=xdg-open
 
@@ -278,3 +277,5 @@ export PATH=/usr/local/cuda/bin${PATH:+:${PATH}}
 # export LD_LIBRARY_PATH=/usr/local/cuda-12.2/lib64\${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
 
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+[ -f "/home/ad/.ghcup/env" ] && . "/home/ad/.ghcup/env" # ghcup-env
