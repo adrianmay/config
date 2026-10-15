@@ -1,5 +1,7 @@
 set encoding=utf-8
+set timeoutlen=400
 set nocompatible
+set switchbuf=useopen,split
 let g:haddock_browser="/usr/bin/firefox"
 let maplocalleader=","
 syntax on
@@ -32,8 +34,10 @@ filetype plugin indent on
 " %DMaking %*\a in %f,
 " %f|%l| %m
 execute pathogen#infect()
+" autocmd VimEnter * NERDTree
 	
 set exrc
+set splitright
 set scrolloff=10000
 set noequalalways
 set hidden
@@ -92,6 +96,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'skywind3000/asyncrun.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'rust-lang/rust.vim'
+Plug 'skywind3000/asyncrun.vim'
 call plug#end()
 syntax on
 filetype plugin on
@@ -215,13 +220,13 @@ filetype plugin indent on
 set background=light
 " colorscheme adrian
 " set background=dark
-" colorscheme ad
+colorscheme ad_light
 " let g:solarized_termcolors=16
 " colorscheme evening
 " colorscheme bw
 " colorscheme winter
 " colorscheme abra
-colorscheme ChocolatePapaya
+" colorscheme ChocolatePapaya
 
 
 hi Normal cterm=bold ctermbg=230
@@ -266,7 +271,6 @@ com! DiffDisk call s:DiffWithDisk()
 
 au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
 
-
 autocmd FileType javascript let b:surround_45 = "/* \r */"
 autocmd FileType c let b:surround_45 = "/* \r */"
 autocmd FileType html let b:surround_45 = "<!-- \r -->"
@@ -291,10 +295,14 @@ nmap <INS> :set nopaste!<CR>
 
 map <S-Tab> :wa<CR>:bnext<CR>
 
-let g:asyncrun_open = 80
+" let g:asyncrun_mode = term
+" let g:asyncrun_open = 20
+
+" :autocmd FileType qf wincmd H
+" autocmd FileType qf wincmd H
 nmap <CR> :wa<CR>
-nmap <Space><Space> :wa<CR>:AsyncRun make test<CR>
 nmap <Space> :wa<CR>:AsyncRun make<CR>
+nmap <Space><Space> :wa<CR>:AsyncRun make test<CR>
 nmap gh<Space> :wa<CR>:AsyncRun hint<CR>
 nmap <Delete> :AsyncStop<CR>
 nmap g<Space> :AsyncStop<CR>
@@ -391,10 +399,10 @@ nnoremap <silent> <C-k> <c-w>k
 nnoremap <silent> <C-j> <c-w>j
 nnoremap <c-e> <c-u>
 
-nnoremap <C-Left> 20<C-W><
-nnoremap <C-Right> 20<C-W>>
-nnoremap <C-Up> 10<C-W>-
-nnoremap <C-Down> 10<C-W>+
+nnoremap <C-Left> 8<C-W><
+nnoremap <C-Right> 8<C-W>>
+nnoremap <C-Up> 5<C-W>-
+nnoremap <C-Down> 5<C-W>+
 
 set mouse=
 
@@ -416,3 +424,21 @@ au FocusGained,BufEnter * :checktime
 
 set wildmode=longest,list,full
 set wildmenu
+nmap ff :NERDTreeFocus<CR>
+
+nmap <CR> :wa<CR>
+
+nmap <C-Q> :vertical topleft copen \| vertical resize 100<CR>
+
+let g:session_file = expand('.session.vim')
+
+augroup AutoSession
+    autocmd!
+    autocmd VimLeavePre * execute 'mksession! ' . fnameescape(g:session_file)
+    autocmd VimEnter * if argc() == 0 && filereadable(g:session_file)
+                \ | execute 'source ' . fnameescape(g:session_file)
+                \ | endif
+augroup END
+
+set sessionoptions=buffers,curdir,folds,help,tabpages,winsize,terminal,globals
+

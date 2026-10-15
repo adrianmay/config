@@ -1,3 +1,10 @@
+
+# Nix
+if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
+  . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
+fi
+# End Nix
+
 # /etc/zsh/zshrc: system-wide .zshrc file for zsh(1).
 #
 # This file is sourced only for interactive shells. It
@@ -230,7 +237,7 @@ function precmd() {
   [[ $HOST = coal ]] && PR_TEMP=$PR_BLUE
 }
 
-PROMPT='%(!.$PR_WHITE$PR_BK_RED.$PR_TEMP$PR_BK_BLUE)%~${(e)PR_PADDING}%n@%m${(e)PR_PADDING} %w %T%E
+PROMPT='%(!.$PR_WHITE$PR_BK_RED.$PR_TEMP$PR_BK_GREEN)%~${(e)PR_PADDING}%n@%m${(e)PR_PADDING} %w %T%E
 %?|%! $PR_NO_COLOUR$([ -f /usr/share/sounds/popq.wav ] && aplay -q /usr/share/sounds/popq.wav &)'
 
 PATH=~/.config/bin:~/.local/bin:~/bin:~/.cargo/bin:$PATH
@@ -274,8 +281,13 @@ fi
 alias x=xdg-open
 
 export PATH=/usr/local/cuda/bin${PATH:+:${PATH}}
+export PATH=/usr/local/go/bin:$PATH
+export PATH="$PATH:$(go env GOPATH)/bin"
+
 # export LD_LIBRARY_PATH=/usr/local/cuda-12.2/lib64\${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
 
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 [ -f "/home/ad/.ghcup/env" ] && . "/home/ad/.ghcup/env" # ghcup-env
+export QT_FONT_DPI=120 kdbg
+
