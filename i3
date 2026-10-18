@@ -14,7 +14,10 @@ exec --no-startup-id /etc/do.xrandr
 exec --no-startup-id xscreensaver --no-splash &
 
 # exec_always --no-startup-id xset dpms 0 0 30 &
-exec_always --no-startup-id xss-lock -- i3lock -n &
+# Lock the screen before suspend and hibernate (and after 10 minutes idle,
+# X's screensaver timeout). --transfer-sleep-lock holds the sleep back until
+# i3lock is showing, so the desktop is never visible on waking.
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
 # exec syndaemon -dRki1
 exec --no-startup-id sleep 2; feh --bg-fill Wallpaper.jpg
