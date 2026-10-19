@@ -223,6 +223,10 @@ eval PR_BK_LIGHT_$color='%{$bg[${(L)color}]%}'
 (( count = $count + 1 ))
 done
 PR_NO_COLOUR="%{$terminfo[sgr0]%}"
+PR_BAR_COLOUR=green
+[[ -r ~/.config/prompt-colour ]] && read -r PR_BAR_COLOUR _ < ~/.config/prompt-colour
+[[ -n $bg[$PR_BAR_COLOUR] ]] || PR_BAR_COLOUR=green
+PR_BK_BAR="%{$terminfo[bold]$bg[$PR_BAR_COLOUR]%}"
 
 function precmd() {
 	local TERMWIDTH
@@ -237,7 +241,7 @@ function precmd() {
   [[ $HOST = coal ]] && PR_TEMP=$PR_BLUE
 }
 
-PROMPT='%(!.$PR_WHITE$PR_BK_RED.$PR_TEMP$PR_BK_GREEN)%~${(e)PR_PADDING}%n@%m${(e)PR_PADDING} %w %T%E
+PROMPT='%(!.$PR_WHITE$PR_BK_RED.$PR_TEMP$PR_BK_BAR)%~${(e)PR_PADDING}%n@%m${(e)PR_PADDING} %w %T%E
 %?|%! $PR_NO_COLOUR$([ -f /usr/share/sounds/popq.wav ] && aplay -q /usr/share/sounds/popq.wav &)'
 
 PATH=~/.config/bin:~/.local/bin:~/bin:~/.cargo/bin:$PATH
